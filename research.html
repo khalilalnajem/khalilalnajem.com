@@ -69,19 +69,19 @@
 
         <div class="dis-sidebar">
           <div class="dis-stat">
-            <span class="dis-stat-num">199</span>
+            <span class="dis-stat-num" data-target="199">0</span>
             <span class="dis-stat-label">Papers in screening pool</span>
           </div>
           <div class="dis-stat">
-            <span class="dis-stat-num">64</span>
+            <span class="dis-stat-num" data-target="64">0</span>
             <span class="dis-stat-label">Journal articles included</span>
           </div>
           <div class="dis-stat">
-            <span class="dis-stat-num">10K</span>
+            <span class="dis-stat-num" data-target="10" data-suffix="K">0</span>
             <span class="dis-stat-label">Words — systematic review</span>
           </div>
           <div class="dis-stat">
-            <span class="dis-stat-num">3</span>
+            <span class="dis-stat-num" data-target="3">0</span>
             <span class="dis-stat-label">Research questions</span>
           </div>
         </div>
@@ -114,6 +114,32 @@
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
     });
+
+    // Count-up animation
+    const counters = document.querySelectorAll('.dis-stat-num[data-target]');
+    let counted = false;
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          counters.forEach(el => {
+            const target = +el.dataset.target;
+            const suffix = el.dataset.suffix || '';
+            const duration = 1600;
+            const start = performance.now();
+            const step = (now) => {
+              const progress = Math.min((now - start) / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(ease * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+              else el.textContent = target + suffix;
+            };
+            requestAnimationFrame(step);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    counterObs.observe(document.querySelector('.dis-sidebar'));
   </script>
 </body>
 </html>
