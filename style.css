@@ -469,6 +469,17 @@ section {
   padding: 0.2rem 0.5rem;
   margin-top: 0.5rem;
 }
+a.cv-badge {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  margin-right: 0.3rem;
+}
+a.cv-badge:hover {
+  background: rgba(232,17,45,0.2);
+  border-color: #E8112D;
+  color: #E8112D;
+}
 
 .cv-download {
   display: inline-flex;
