@@ -611,6 +611,20 @@ a.project-card:hover .project-view-link {
   letter-spacing: 0.18em;
 }
 
+.project-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  text-decoration: none;
+  transition: letter-spacing 0.2s;
+}
+.project-link:hover {
+  letter-spacing: 0.15em;
+}
+
 /* ── DISSERTATION ── */
 #dissertation {
   background: var(--offwhite);
