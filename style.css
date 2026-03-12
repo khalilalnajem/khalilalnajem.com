@@ -506,6 +506,19 @@ a.cv-badge:hover {
   background: var(--cream);
 }
 
+.projects-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  padding: 2.5rem 0 0.75rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 0;
+}
+.projects-group-label:first-of-type {
+  border-top: none;
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
