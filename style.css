@@ -585,6 +585,21 @@ section {
 }
 .status-dot.active { background: #4ade80; }
 
+.project-view-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  transition: letter-spacing 0.2s;
+}
+.project-card:hover .project-view-link,
+a.project-card:hover .project-view-link {
+  letter-spacing: 0.18em;
+}
+
 /* ── DISSERTATION ── */
 #dissertation {
   background: var(--offwhite);
