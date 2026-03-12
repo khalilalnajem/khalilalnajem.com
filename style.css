@@ -1109,22 +1109,38 @@ body[data-lang="ar"] .dis-abstract-ar { display: block; }
 }
 .cv-item .cv-item-desc,
 .cv-item .cv-badge,
-.cv-item .achievement-photo {
+.cv-item .cv-thumbs {
   display: none;
 }
 .cv-item.expanded .cv-item-desc,
 .cv-item.expanded .cv-badge,
-.cv-item.expanded .achievement-photo {
-  display: block;
+.cv-item.expanded .cv-thumbs {
+  display: flex;
   animation: fadeUp 0.4s ease forwards;
 }
+.cv-item.expanded .cv-badge {
+  display: inline-block;
+}
 
-/* ── ROWAD PHOTO ── */
-.achievement-photo {
-  max-width: 480px;
-  width: 100%;
-  margin-top: 1rem;
-  border-radius: 2px;
+/* ── CV THUMBNAIL ROW ── */
+.cv-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+.cv-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cv-thumb:hover {
+  border-color: #E8112D;
+  transform: scale(1.05);
 }
 
 @media (max-width: 900px) {

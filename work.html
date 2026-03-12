@@ -24,6 +24,12 @@
     </ul>
   </nav>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="page-hero-inner">
@@ -52,7 +58,7 @@
               <p class="cv-item-title">Barclays Finance Experience</p>
               <p class="cv-item-org">Barclays · Glasgow</p>
               <p class="cv-item-desc">6-week finance insight programme alongside 50+ students from 3 universities. Covered financial research, risk management, tax, and strategic pitching. Designed and pitched a financial product targeting Ultra High Net Worth Individuals (UHNWI) to senior Barclays professionals. Strong feedback for clarity, creativity, and feasibility.</p>
-              <a href="assets/barclays-certificate.pdf" target="_blank" class="cv-badge">View Certificate →</a>
+              <a href="assets/barclays-certificate.pdf" target="_blank" class="cv-badge" onclick="event.stopPropagation()">View Certificate →</a>
             </div>
           </div>
 
@@ -75,8 +81,10 @@
               <p class="cv-item-org">Warba Bank · National Innovation Competition</p>
               <p class="cv-item-desc">Built an LLM-powered customer service chatbot. Placed runner-up out of national field; team prize of KD 1,200 (approx. £4,000).</p>
               <span class="cv-badge">🏆 National Award</span>
-              <img src="assets/rowad-warba.jpg" alt="ROWAD 5.0 Warba Bank event" class="achievement-photo">
-              <a href="assets/warba-certificate.pdf" target="_blank" class="cv-badge">View Certificate →</a>
+              <div class="cv-thumbs">
+                <img src="assets/rowad-warba.jpg" alt="ROWAD 5.0 Warba Bank event" class="cv-thumb" onclick="event.stopPropagation();openLightbox('assets/rowad-warba.jpg')">
+              </div>
+              <a href="assets/warba-certificate.pdf" target="_blank" class="cv-badge" onclick="event.stopPropagation()">View Certificate →</a>
             </div>
           </div>
 
@@ -97,9 +105,8 @@
               <p class="cv-item-title">Coaching Solopreneur</p>
               <p class="cv-item-org">Self-employed · Kuwait</p>
               <p class="cv-item-desc">Launched a personal development coaching brand at 17. Built the full product stack independently: ebook, AI assistant, website, newsletter, and all copywriting. Delivered 1:1 coaching. Content available on Instagram. Interviewed Eric Edmeades (on record). Invited to speak at the iAcademyPD (70 attendees, live Zoom).</p>
-              <a href="assets/k-newsletter.pdf" target="_blank" class="cv-badge">Newsletter Sample →</a>
-              <a href="assets/goal-setting-guide-ar.pdf" target="_blank" class="cv-badge">Mini Guide (AR) →</a>
-              <a href="assets/goal-setting-guide.pdf" target="_blank" class="cv-badge">Mini Guide (EN) →</a>
+              <a href="assets/goal-setting-guide-ar.pdf" target="_blank" class="cv-badge" onclick="event.stopPropagation()">Mini Guide (AR) →</a>
+              <a href="assets/goal-setting-guide.pdf" target="_blank" class="cv-badge" onclick="event.stopPropagation()">Mini Guide (EN) →</a>
             </div>
           </div>
 
@@ -126,7 +133,9 @@
               <p class="cv-item-org">University of Glasgow · Adam Smith Business School</p>
               <p class="cv-item-desc">Minimum 2:1 secured. Targeting First Class Honours. Dissertation: LLMs as decision-support tools for early-stage founders. PRISMA methodology, 199 papers screened, 64 journal articles included.</p>
               <span class="cv-badge">2:1 Secured · 1st Target</span>
-              <img src="assets/kaplan-feature.jpg" alt="Khalil featured by Kaplan International Pathways" class="achievement-photo">
+              <div class="cv-thumbs">
+                <img src="assets/kaplan-feature.jpg" alt="Khalil featured by Kaplan International Pathways" class="cv-thumb" onclick="event.stopPropagation();openLightbox('assets/kaplan-feature.jpg')">
+              </div>
             </div>
           </div>
 
@@ -159,7 +168,9 @@
               <p class="cv-item-title">Speaker, Consciousness &amp; Leadership</p>
               <p class="cv-item-org">iAcademyPD</p>
               <p class="cv-item-desc">Invited to speak on consciousness, leadership, and self-development. Live Zoom session, approximately 70 attendees.</p>
-              <img src="assets/iacademy-poster.jpg" alt="iAcademyPD speaking event" class="achievement-photo">
+              <div class="cv-thumbs">
+                <img src="assets/iacademy-poster.jpg" alt="iAcademyPD speaking event" class="cv-thumb" onclick="event.stopPropagation();openLightbox('assets/iacademy-poster.jpg')">
+              </div>
             </div>
           </div>
 
@@ -171,8 +182,10 @@
               <p class="cv-item-org">Kuwait Boy Scouts</p>
               <p class="cv-item-desc">Six years as Scout member, progressing to Scout Leader. Awarded Scout of the Year twice, the highest individual recognition in the programme.</p>
               <span class="cv-badge">🏆 Scout of the Year × 2</span>
-              <img src="assets/scout-award.jpg" alt="Khalil with Scout of the Year award" class="achievement-photo">
-              <img src="assets/scout-certificates.jpg" alt="Scout certificates and awards" class="achievement-photo">
+              <div class="cv-thumbs">
+                <img src="assets/scout-award.jpg" alt="Khalil with Scout of the Year award" class="cv-thumb" onclick="event.stopPropagation();openLightbox('assets/scout-award.jpg')">
+                <img src="assets/scout-certificates.jpg" alt="Scout certificates and awards" class="cv-thumb" onclick="event.stopPropagation();openLightbox('assets/scout-certificates.jpg')">
+              </div>
             </div>
           </div>
         </div>
@@ -209,6 +222,17 @@
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
     });
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 </body>
 </html>
