@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khalil Alnajem — خليل النجم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="web-icon.png">
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Business · Research · Entrepreneurship</p>
+      <h1 class="hero-name-en">Khalil<br>Alnajem</h1>
+      <p class="hero-name-ar">خليل<br>النجم</p>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">"Imagination is more important than knowledge." — Albert Einstein</p>
+      <p class="hero-tagline-ar">«الخيال أهم من المعرفة» — ألبرت أينشتاين</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-descriptor">
+        <div class="descriptor-item">
+          <span class="descriptor-num">01</span>
+          <div class="descriptor-text">
+            <h3>Final-Year Business Student</h3>
+            <p>University of Glasgow — Adam Smith Business School, targeting First Class Honours, June 2026.</p>
+          </div>
+        </div>
+        <div class="descriptor-item">
+          <span class="descriptor-num">02</span>
+          <div class="descriptor-text">
+            <h3>Founder &amp; Builder</h3>
+            <p>Runner-up, ROWAD 5.0 national innovation competition. Building AI tools for Gulf Arab audiences.</p>
+          </div>
+        </div>
+        <div class="descriptor-item">
+          <span class="descriptor-num">03</span>
+          <div class="descriptor-text">
+            <h3>Future Academic</h3>
+            <p>Pursuing a PhD in Entrepreneurship. Long-term goal: to teach, research, and inspire — because that's what I'm built for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <div class="chapters">
+    <a href="about.html" class="chapter-link">
+      <span class="chapter-num">01 —</span>
+      <span class="chapter-name">About</span>
+      <span class="chapter-desc">Who I am, where I come from, what drives me</span>
+      <span class="chapter-arrow">→</span>
+    </a>
+    <a href="work.html" class="chapter-link">
+      <span class="chapter-num">02 —</span>
+      <span class="chapter-name">Work</span>
+      <span class="chapter-desc">Experience, education, and everything I've done</span>
+      <span class="chapter-arrow">→</span>
+    </a>
+    <a href="projects.html" class="chapter-link">
+      <span class="chapter-num">03 —</span>
+      <span class="chapter-name">Projects</span>
+      <span class="chapter-desc">Ventures, builds, and creative work</span>
+      <span class="chapter-arrow">→</span>
+    </a>
+    <a href="research.html" class="chapter-link">
+      <span class="chapter-num">04 —</span>
+      <span class="chapter-name">Research</span>
+      <span class="chapter-desc">Dissertation — LLMs and early-stage founders</span>
+      <span class="chapter-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p class="footer-name">Khalil Alnajem</p>
+      <p class="footer-name-ar">خليل النجم</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:khalilalnajem+web@gmail.com">Email</a></li>
+      <li><a href="https://x.com/ask_sanad" target="_blank">X / Sanad</a></li>
+      <li><a href="https://linkedin.com/in/khalilalnajem" target="_blank">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 khalilalnajem.com</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.body.setAttribute('data-lang', currentLang);
+      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a[href]').forEach(a => {
+      if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
+    });
+  </script>
+</body>
+</html>

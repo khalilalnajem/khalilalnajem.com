@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Khalil Alnajem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="web-icon.png">
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-hero-label">01 — About</span>
+      <h1 class="page-hero-title">Who I Am</h1>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div>
+          <img src="619592324_17919986565248437_8383780436089643945_n.jpg" alt="Khalil Alnajem" style="max-width:260px; width:100%; display:block; margin-bottom:2rem; border-radius:2px;">
+          <div class="about-body">
+            <p>I'm Khalil — a Kuwaiti student at the University of Glasgow, finishing a degree in Business & Management while building companies and thinking seriously about how knowledge gets made and taught. I started at Colorado State University, transferred to Glasgow, and rebuilt how I work along the way.</p>
+            <p>Along the way, I've been an aviation content creator, a teenage brand builder, a Mindvalley student — including a personal branding quest with Beto Perez (Zumba founder, Babson alumnus). Every phase taught me something I couldn't have learned in a classroom.</p>
+            <p>My work sits at the intersection of entrepreneurship, AI, and education. I'm not interested in the surface layer of business — the pitch decks, the hustle rhetoric, the tidy frameworks taught without context. I'm interested in what actually drives decisions under uncertainty, and how we might teach that more honestly.</p>
+            <p>I've been building since I was sixteen: freelance design, iOS apps, an AI education platform for the Gulf, a national competition award for an LLM-powered product. My dissertation asks whether large language models can genuinely support the way founders think — not automate it, but augment it.</p>
+            <p>After Glasgow, I'm pursuing a PhD. My long-term goal is to become a professor — to teach and inspire, because I believe that is what I'm meant to do. I want to bring rigorous, research-grounded entrepreneurship education back to Kuwait — in Arabic, embedded in Gulf context, and free from the mythology that surrounds the field.</p>
+          </div>
+          <div class="about-body-ar">
+            <p>أنا خليل — طالب كويتي في جامعة غلاسكو، أُنهي درجة البكالوريوس في إدارة الأعمال بينما أبني مشاريع وأفكّر بجدية في كيفية صنع المعرفة وتعليمها.</p>
+            <p>يقع عملي عند تقاطع ريادة الأعمال والذكاء الاصطناعي والتعليم. لا يستهويني الوجه السطحي للأعمال — العروض التقديمية ولغة الاندفاع والأطر المرتبة التي تُدرَّس دون سياق. ما يشغلني هو ما يحرّك القرارات في ظل الغموض، وكيف يمكننا تعليم ذلك بصدق أكبر.</p>
+            <p>أبني منذ كنت في السادسة عشرة: تصميم حر، تطبيقات iOS، منصة تعليمية بالذكاء الاصطناعي للجمهور الخليجي، وجائزة في مسابقة وطنية لمنتج مدعوم بنماذج اللغة الكبيرة. تتساءل أطروحتي عمّا إذا كانت هذه النماذج قادرة على دعم طريقة تفكير المؤسسين حقًا — لا أتمتتها، بل تعزيزها.</p>
+            <p>بعد غلاسكو، أتجه نحو الماجستير في ريادة الأعمال، ثم الدكتوراه. هدفي البعيد هو إعادة تعليم ريادة الأعمال الرصين والمبني على البحث إلى الكويت — بالعربية، في سياقه الخليجي، بعيدًا عن الأساطير التي تحيط بهذا المجال.</p>
+          </div>
+        </div>
+        <div class="about-sidebar">
+          <div class="info-block">
+            <label>Based in</label>
+            <span>Glasgow, Scotland → Kuwait</span>
+          </div>
+          <div class="info-block">
+            <label>Education</label>
+            <span>BSc Business &amp; Management<br>University of Glasgow, 2026</span>
+          </div>
+          <div class="info-block">
+            <label>Goal</label>
+            <span>PhD → Professor<br>Entrepreneurship &amp; Innovation</span>
+          </div>
+          <div class="info-block">
+            <label>Languages</label>
+            <span>Arabic (native) · English (fluent)</span>
+          </div>
+          <div class="info-block">
+            <label>Contact</label>
+            <span>khalilalnajem+web@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p class="footer-name">Khalil Alnajem</p>
+      <p class="footer-name-ar">خليل النجم</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:khalilalnajem+web@gmail.com">Email</a></li>
+      <li><a href="https://x.com/ask_sanad" target="_blank">X / Sanad</a></li>
+      <li><a href="https://linkedin.com/in/khalilalnajem" target="_blank">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 khalilalnajem.com</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.body.setAttribute('data-lang', currentLang);
+      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a[href]').forEach(a => {
+      if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
+    });
+  </script>
+</body>
+</html>

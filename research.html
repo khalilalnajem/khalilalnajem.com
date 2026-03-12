@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research — Khalil Alnajem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="web-icon.png">
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-hero-label">04 — Research</span>
+      <h1 class="page-hero-title">Research</h1>
+    </div>
+  </div>
+
+  <!-- DISSERTATION SECTION -->
+  <section id="dissertation">
+    <div class="container">
+      <div class="section-header dissertation-inner">
+        <span class="section-num">04 —</span>
+        <h2 class="section-title">Research</h2>
+        <h2 class="section-title-ar">البحث العلمي</h2>
+      </div>
+      <div class="dissertation-layout dissertation-inner reveal">
+        <div>
+          <div class="dissertation-title-block">
+            <p class="dis-label">MGT4002P · Dissertation · University of Glasgow · 2025–2026</p>
+            <h3 class="dis-title">"Large Language Models as Decision-Support Tools for Early-Stage Founders: A Systematic Literature Review"</h3>
+            <h3 class="dis-title-ar">«نماذج اللغة الكبيرة بوصفها أدوات دعم القرار لرواد الأعمال في المراحل الأولى: مراجعة منهجية للأدبيات»</h3>
+          </div>
+
+          <p class="dis-abstract">This dissertation investigates whether large language models can meaningfully support the cognitive and decision-making processes of early-stage entrepreneurs — not as automation tools, but as genuine thinking partners. The review spans three interconnected research questions, synthesising 68 peer-reviewed sources drawn from an initial screening pool of 199 papers across entrepreneurship, cognitive science, and AI literature.</p>
+          <p class="dis-abstract-ar">تتناول هذه الأطروحة مسألة ما إذا كانت نماذج اللغة الكبيرة قادرة على دعم العمليات المعرفية وصنع القرار لدى رواد الأعمال في المراحل الأولى — لا بوصفها أدوات أتمتة، بل شركاء تفكير حقيقيين. تمتد المراجعة عبر ثلاثة أسئلة بحثية مترابطة، وتُخلص إلى تحليل 41 مصدرًا في أدبيات ريادة الأعمال وعلم الإدراك والذكاء الاصطناعي.</p>
+
+          <ul class="rq-list">
+            <li>
+              <span class="rq-num">RQ1</span>
+              <span>What cognitive and decision-making challenges do early-stage founders face, and how are these characterised in the literature?</span>
+            </li>
+            <li>
+              <span class="rq-num">RQ2</span>
+              <span>In what ways do LLMs demonstrate capability to support entrepreneurial opportunity recognition and evaluation?</span>
+            </li>
+            <li>
+              <span class="rq-num">RQ3</span>
+              <span>What limitations and risks arise when LLMs are deployed in high-stakes entrepreneurial decision contexts?</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="dis-sidebar">
+          <div class="dis-stat">
+            <span class="dis-stat-num">199</span>
+            <span class="dis-stat-label">Papers in screening pool</span>
+          </div>
+          <div class="dis-stat">
+            <span class="dis-stat-num">68</span>
+            <span class="dis-stat-label">Peer-reviewed sources included</span>
+          </div>
+          <div class="dis-stat">
+            <span class="dis-stat-num">10K</span>
+            <span class="dis-stat-label">Words — systematic review</span>
+          </div>
+          <div class="dis-stat">
+            <span class="dis-stat-num">3</span>
+            <span class="dis-stat-label">Research questions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p class="footer-name">Khalil Alnajem</p>
+      <p class="footer-name-ar">خليل النجم</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:khalilalnajem+web@gmail.com">Email</a></li>
+      <li><a href="https://x.com/ask_sanad" target="_blank">X / Sanad</a></li>
+      <li><a href="https://linkedin.com/in/khalilalnajem" target="_blank">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 khalilalnajem.com</p>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+    });
+
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.body.setAttribute('data-lang', currentLang);
+      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a[href]').forEach(a => {
+      if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
+    });
+  </script>
+</body>
+</html>
