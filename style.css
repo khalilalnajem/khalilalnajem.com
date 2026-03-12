@@ -24,26 +24,10 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   overflow-x: hidden;
-  cursor: none;
 }
 
-/* ── CUSTOM CURSOR ── */
-.cursor {
-  position: fixed;
-  width: 10px; height: 10px;
-  background: var(--amber);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
-  mix-blend-mode: multiply;
-}
-.cursor.hovering {
-  width: 40px; height: 40px;
-  background: var(--amber-light);
-  opacity: 0.6;
-}
+/* cursor removed */
+.cursor { display: none; }
 
 /* ── NOISE OVERLAY ── */
 body::before {
@@ -109,9 +93,29 @@ nav {
   background: none;
   border: 1px solid var(--amber);
   padding: 0.3rem 0.75rem;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.2s;
 }
+
+/* ── MOBILE NAV HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 .lang-toggle:hover {
   background: var(--amber);
   color: white;
@@ -811,7 +815,21 @@ body[data-lang="ar"] .dis-abstract-ar { display: block; }
   .about-grid, .cv-grid, .dissertation-layout { grid-template-columns: 1fr; gap: 3rem; }
   .projects-grid { grid-template-columns: 1fr; }
   nav { padding: 1rem 1.5rem; }
-  .nav-links { gap: 1rem; }
+  .nav-hamburger { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: rgba(249, 249, 249, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 0.8rem; }
   .chapter-link { padding: 1.75rem 1.5rem; }
   .chapter-desc { display: none; }
   .chapter-name { font-size: 1.5rem; }
@@ -1050,7 +1068,7 @@ body[data-lang="ar"] .dis-abstract-ar { display: block; }
 
 /* ── EXPANDABLE CV ITEMS ── */
 .cv-item {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .cv-item .cv-expand-icon {
   float: right;

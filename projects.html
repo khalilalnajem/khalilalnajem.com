@@ -11,17 +11,17 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
 
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+      <li><div id="google_translate_element" style="display:inline-block"></div></li>
     </ul>
   </nav>
 
@@ -95,6 +95,15 @@
       </div>
 
       <div class="project-card">
+        <p class="project-tag">Aviation · Content · Social Media</p>
+        <h3 class="project-name">Aviation Globe</h3>
+        <h3 class="project-name-ar">أفييشن غلوب</h3>
+        <p class="project-desc">An aviation passion project on Instagram sharing knowledge, news, and content about the aviation industry. Built an engaged audience around a genuine personal interest in flight and aerospace.</p>
+        <p class="project-desc-ar">مشروع شغف بالطيران على إنستغرام لمشاركة المعرفة والأخبار والمحتوى حول صناعة الطيران. بنى جمهورًا متفاعلاً حول اهتمام شخصي حقيقي بالطيران والفضاء.</p>
+        <p class="project-status"><span class="status-dot"></span> 2018–2020 · Archived</p>
+      </div>
+
+      <div class="project-card">
         <p class="project-tag">Design · Branding · Freelance</p>
         <h3 class="project-name">Freelance Design Work</h3>
         <h3 class="project-name-ar">أعمال التصميم الحر</h3>
@@ -118,7 +127,7 @@
         <h3 class="project-name-ar">مدرّب مستقل</h3>
         <p class="project-desc">Launched a personal development coaching brand at 17. Built everything independently: ebook, website, newsletter, AI assistant, all copywriting. Produced a Goal Setting Mini Guide in Arabic. Delivered 1:1 coaching. Spoke to 70 people at the iAcademyPD.</p>
         <p class="project-desc-ar">أطلق علامة تدريب تنموي شخصي في سن السابعة عشرة. بنى كل شيء باستقلالية: كتاب إلكتروني وموقع ونشرة وذكاء اصطناعي وكامل النصوص. أنتج دليل تحديد الأهداف بالعربية. قدّم تدريبًا فرديًا. تحدّث لـ70 شخصًا في الأكاديمية الدولية للتطوير الشخصي.</p>
-        <p class="project-status"><span class="status-dot"></span> 2020–2022 · Archived</p>
+        <p class="project-status"><span class="status-dot"></span> 2021–2025</p>
       </div>
 
       <div class="project-card">
@@ -193,35 +202,16 @@
   </footer>
 
   <script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-    });
 
-    let currentLang = 'en';
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      document.body.setAttribute('data-lang', currentLang);
-      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
     }
 
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
     revealEls.forEach(el => obs.observe(el));
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
-    });
 
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
@@ -232,7 +222,7 @@
       document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
+<script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"ar",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

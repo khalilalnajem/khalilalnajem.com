@@ -11,17 +11,17 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
 
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+      <li><div id="google_translate_element" style="display:inline-block"></div></li>
     </ul>
   </nav>
 
@@ -90,7 +90,7 @@
           </div>
 
           <div class="cv-item" onclick="this.classList.toggle('expanded')">
-            <span class="cv-year">2020–2022</span>
+            <span class="cv-year">2021–2025</span>
             <div>
               <span class="cv-expand-icon">+</span>
               <p class="cv-item-title">Coaching Solopreneur</p>
@@ -139,9 +139,9 @@
             <span class="cv-year">Next</span>
             <div>
               <span class="cv-expand-icon">+</span>
-              <p class="cv-item-title">PhD, Entrepreneurship</p>
+              <p class="cv-item-title">MSc Entrepreneurship, then PhD</p>
               <p class="cv-item-org">Entrepreneurship · Research · Creative Action</p>
-              <p class="cv-item-desc">Goal: to become a professor who bridges entrepreneurship research, creative action, and education. Bringing rigorous, research-grounded entrepreneurship education to Kuwait and the Gulf, in Arabic, rooted in regional context.</p>
+              <p class="cv-item-desc">Pursuing a Masters in Entrepreneurship, then a PhD. Goal: to become a professor who bridges entrepreneurship research, creative action, and education. Bringing rigorous, research-grounded entrepreneurship education to Kuwait and the Gulf, in Arabic, rooted in regional context.</p>
             </div>
           </div>
 
@@ -191,35 +191,17 @@
   </footer>
 
   <script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item, .cv-item').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-    });
 
-    let currentLang = 'en';
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      document.body.setAttribute('data-lang', currentLang);
-      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
     }
 
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
     revealEls.forEach(el => obs.observe(el));
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
-    });
   </script>
+<script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"ar",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

@@ -11,17 +11,17 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
 
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+      <li><div id="google_translate_element" style="display:inline-block"></div></li>
     </ul>
   </nav>
 
@@ -55,7 +55,7 @@
           <span class="descriptor-num">03</span>
           <div class="descriptor-text">
             <h3>Future Academic</h3>
-            <p>Pursuing a PhD in Entrepreneurship. Long-term goal: to become a professor who bridges entrepreneurship research, creative action, and education.</p>
+            <p>Pursuing an MSc in Entrepreneurship, then a PhD. Long-term goal: to become a professor who bridges entrepreneurship research, creative action, and education.</p>
           </div>
         </div>
       </div>
@@ -109,35 +109,17 @@
   </footer>
 
   <script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-    });
 
-    let currentLang = 'en';
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      document.body.setAttribute('data-lang', currentLang);
-      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
     }
 
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
     revealEls.forEach(el => obs.observe(el));
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
-    });
   </script>
+<script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"ar",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

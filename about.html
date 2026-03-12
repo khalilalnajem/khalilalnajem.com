@@ -11,17 +11,17 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
 
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><button class="lang-toggle" id="langToggle" onclick="toggleLang()">العربية</button></li>
+      <li><div id="google_translate_element" style="display:inline-block"></div></li>
     </ul>
   </nav>
 
@@ -43,7 +43,7 @@
             <p>Along the way, I've been an aviation content creator, a teenage brand builder, a Mindvalley student, including a personal branding quest with Beto Perez (Zumba founder, Babson alumnus). Every phase taught me something I couldn't have learned in a classroom.</p>
             <p>My work sits at the intersection of entrepreneurship, AI, and education. I'm not interested in the surface layer of business: the pitch decks, the hustle rhetoric, the tidy frameworks taught without context. I'm interested in what actually drives decisions under uncertainty, and how we might teach that more honestly.</p>
             <p>I've been building since I was sixteen: freelance design, iOS apps, an AI education platform for the Gulf, a national competition award for an LLM-powered product. My dissertation asks whether large language models can genuinely support the way founders think, not automate it, but augment it. 64 journal articles reviewed through PRISMA methodology.</p>
-            <p>After Glasgow, I'm pursuing a PhD. My long-term goal is to become a professor who bridges entrepreneurship research, creative action, and education. I want to bring rigorous, research-grounded entrepreneurship education back to Kuwait, in Arabic, embedded in Gulf context, and free from the mythology that surrounds the field.</p>
+            <p>After Glasgow, I'm pursuing a Masters in Entrepreneurship, then a PhD. My long-term goal is to become a professor who bridges entrepreneurship research, creative action, and education. I want to bring rigorous, research-grounded entrepreneurship education back to Kuwait, in Arabic, embedded in Gulf context, and free from the mythology that surrounds the field.</p>
           </div>
           <div class="about-body-ar">
             <p>أنا خليل — طالب كويتي في جامعة غلاسكو، أُنهي درجة البكالوريوس في إدارة الأعمال بينما أبني مشاريع وأفكّر بجدية في كيفية صنع المعرفة وتعليمها.</p>
@@ -63,7 +63,7 @@
           </div>
           <div class="info-block">
             <label>Goal</label>
-            <span>PhD → Professor<br>Entrepreneurship &amp; Innovation</span>
+            <span>MSc → PhD → Professor<br>Entrepreneurship &amp; Innovation</span>
           </div>
           <div class="info-block">
             <label>Languages</label>
@@ -93,35 +93,17 @@
   </footer>
 
   <script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .project-card, .chapter-link, .showcase-item').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-    });
 
-    let currentLang = 'en';
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      document.body.setAttribute('data-lang', currentLang);
-      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
     }
 
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
     revealEls.forEach(el => obs.observe(el));
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
       if (a.getAttribute('href') === currentPage) a.style.color = 'var(--amber)';
-    });
   </script>
+<script type="text/javascript">function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",includedLanguages:"ar",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
