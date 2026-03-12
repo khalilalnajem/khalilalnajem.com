@@ -1041,12 +1041,38 @@ body[data-lang="ar"] .dis-abstract-ar { display: block; }
 }
 .gallery-item:hover .gallery-item-label { opacity: 1; }
 
+/* ── EXPANDABLE CV ITEMS ── */
+.cv-item {
+  cursor: pointer;
+}
+.cv-item .cv-expand-icon {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+.cv-item.expanded .cv-expand-icon {
+  transform: rotate(45deg);
+}
+.cv-item .cv-item-desc,
+.cv-item .cv-badge,
+.cv-item .achievement-photo {
+  display: none;
+}
+.cv-item.expanded .cv-item-desc,
+.cv-item.expanded .cv-badge,
+.cv-item.expanded .achievement-photo {
+  display: block;
+  animation: fadeUp 0.4s ease forwards;
+}
+
 /* ── ROWAD PHOTO ── */
 .achievement-photo {
   max-width: 480px;
   width: 100%;
-  display: block;
-  margin-top: 3rem;
+  margin-top: 1rem;
   border-radius: 2px;
 }
 
