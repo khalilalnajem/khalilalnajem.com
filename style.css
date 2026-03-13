@@ -874,6 +874,7 @@ a.project-card:hover .project-view-link {
   width: 320px;
   height: 240px;
   object-fit: cover;
+  object-position: top center;
   border-radius: 2px;
   cursor: zoom-in;
   transition: transform 0.3s;

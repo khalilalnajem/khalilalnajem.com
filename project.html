@@ -17,6 +17,7 @@
     <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
     <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -218,6 +219,12 @@ const projects = {
     active: false,
     body: `<p>Started building under my own name at 16. What began as an Instagram brand in 2019 evolved into a full coaching practice by 2021.</p>
 <p>Built the entire product stack independently: ebook, website, newsletter, AI assistant, and all copywriting. Delivered 1:1 coaching to clients. Produced a <strong>Goal Setting Mini Guide</strong> in both Arabic and English, written at 19.</p>
+<p>Ran a recurring email newsletter covering personal development, goal-setting, and mindset. Each issue was written, designed, and sent independently.</p>
+<div style="border:1px solid var(--rule);padding:1.5rem;margin:1.5rem 0;background:var(--cream);border-radius:2px">
+<p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem">Newsletter Sample</p>
+<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem">Original newsletter issue covering personal growth and self-development. Written and designed independently in Arabic and English.</p>
+<a href="assets/k-newsletter.pdf" target="_blank" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none">View Newsletter PDF →</a>
+</div>
 <p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades (on record). Content is still available on Instagram.</p>
 <p>The guides represent something I've carried since childhood: the instinct to take what I know and make it usable for someone else. That same instinct now drives Sanad, my dissertation, and the direction I'm heading after university.</p>`,
     meta: [
@@ -264,13 +271,14 @@ const projects = {
   },
   'dropshipping': {
     label: 'E-commerce · Early Venture',
-    title: 'Dropshipping Venture',
+    title: 'Device Skins Venture',
     status: 'Archived · 2020',
     active: false,
-    body: `<p>Early e-commerce attempt during COVID. Earned my first revenue online but learned quickly that getting paid once is not the same as building something that lasts.</p>
-<p>No real operating system behind it. The failure taught me more about business structure than any class did.</p>`,
+    body: `<p>A dbrand-style business selling custom device skins and accessories online during COVID. Built the store, sourced products, and ran marketing independently.</p>
+<p>Earned my first revenue online but learned quickly that getting paid once is not the same as building something that lasts. No real operating system behind it. The failure taught me more about business structure than any class did.</p>`,
     meta: [
       ['Period', '2020'],
+      ['Type', 'Device skins & accessories (dbrand-style)'],
       ['Outcome', 'First online revenue, then closed'],
       ['Lesson', 'Getting paid once ≠ building something lasting'],
     ],
