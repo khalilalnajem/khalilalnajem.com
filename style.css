@@ -1080,6 +1080,85 @@ a.project-card:hover .project-view-link {
   margin-top: 0.25rem;
 }
 
+/* ── PRISMA FLOW DIAGRAM ── */
+.prisma-flow {
+  margin: 2.5rem 0 1rem;
+}
+.prisma-stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prisma-stage {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 520px;
+}
+.prisma-box {
+  flex: 1;
+  border: 1px solid var(--rule);
+  padding: 1.25rem 1.5rem;
+  background: var(--offwhite);
+}
+.prisma-box.prisma-id {
+  border-color: var(--amber);
+  border-width: 2px;
+}
+.prisma-box.prisma-included {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+.prisma-box.prisma-included .prisma-phase,
+.prisma-box.prisma-included .prisma-count,
+.prisma-box.prisma-included .prisma-desc {
+  color: white;
+}
+.prisma-phase {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.25rem;
+}
+.prisma-count {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.prisma-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+.prisma-arrow {
+  font-size: 1.2rem;
+  color: var(--amber);
+  text-align: center;
+  padding: 0.4rem 0;
+}
+.prisma-excluded {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .prisma-stage { flex-direction: column; gap: 0.5rem; align-items: stretch; }
+  .prisma-excluded { text-align: center; white-space: normal; }
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--amber);
