@@ -33,6 +33,7 @@
   <!-- PROJECT DETAIL -->
   <div class="page-hero">
     <div class="page-hero-inner">
+      <a href="projects.html" class="proj-back-top">← Back to Projects</a>
       <span class="page-hero-label" id="proj-label"></span>
       <h1 class="page-hero-title" id="proj-title"></h1>
     </div>
@@ -51,9 +52,15 @@
     </div>
   </section>
 
-  <section style="padding:2rem 0 5rem;">
+  <section class="proj-nav-section">
     <div class="container">
-      <a href="projects.html" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); text-decoration:none;">← Back to Projects</a>
+      <div class="proj-nav">
+        <a href="projects.html" class="proj-nav-back">← All Projects</a>
+        <div class="proj-nav-arrows">
+          <a id="proj-prev" class="proj-nav-link">← Previous</a>
+          <a id="proj-next" class="proj-nav-link">Next →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -76,7 +83,7 @@ const projects = {
   'sanad': {
     label: 'AI · Education · Arabic',
     title: 'Sanad, سند',
-    status: 'Work in Progress',
+    status: 'Active',
     active: true,
     body: `<p>Sanad is an Arabic-language AI education platform on X (<a href="https://x.com/ask_sanad" target="_blank">@ask_sanad</a>). It targets Gulf Arab youth who feel stuck, using AI for genuine self-understanding rather than productivity alone.</p>
 <p>Written in Kuwaiti Arabic dialect. The goal is to meet people where they are, in a voice they trust, not in translated corporate English.</p>
@@ -113,7 +120,7 @@ const projects = {
   'tasheel': {
     label: 'AI · Kuwait · Public Service',
     title: 'Tasheel, تسهيل',
-    status: 'Concept Stage',
+    status: 'Concept',
     active: false,
     body: `<p>Tasheel is a concept-stage AI assistant designed for navigating Kuwait's government paperwork and bureaucratic processes.</p>
 <p>Anyone who's dealt with Kuwaiti government offices knows the pain: unclear requirements, inconsistent information, and processes that change without warning. Tasheel is designed to reduce that friction for residents dealing with complex administrative workflows.</p>
@@ -160,7 +167,7 @@ const projects = {
   'homelab': {
     label: 'Infrastructure · Homelab · AI',
     title: 'Self-Hosted AI Stack',
-    status: 'Running',
+    status: 'Active',
     active: true,
     body: `<p>A Raspberry Pi 5 homelab running Pi-hole, Unbound, Tailscale, and Open WebUI for local LLMs. An RTX 3090 workstation handles local inference and fine-tuning experiments.</p>
 <p>I tinker with tiny models for edge deployment, run custom MCP servers connecting personal data sources into agentic workflows, and use it as a low-cost research lab for testing AI behaviour and prompting strategies relevant to my dissertation.</p>
@@ -191,7 +198,7 @@ const projects = {
   'ai-creative': {
     label: 'AI · Creative · Generative',
     title: 'AI-Assisted Creative Work',
-    status: 'Ongoing',
+    status: 'Active',
     active: true,
     body: `<p>Using AI tools across creative domains: building this website with Claude Code, generating music with Suno and other AI composition tools, creating images with Stable Diffusion and Midjourney, and producing video with Google Veo and AI video generation tools.</p>
 <p>AI is not a tool I use occasionally. It is how I build everything. This site you're reading was built entirely with Claude Code in a conversational workflow.</p>`,
@@ -205,22 +212,25 @@ const projects = {
     photos: [],
   },
   'coaching': {
-    label: 'Coaching · Personal Development · Brand',
-    title: 'Coaching Solopreneur',
-    status: '2021–2025',
+    label: 'Brand · Coaching · Education',
+    title: 'Personal Brand & Coaching',
+    status: 'Completed · 2019–2025',
     active: false,
-    body: `<p>Launched a personal development coaching brand at 17. Built everything independently: ebook, website, newsletter, AI assistant, all copywriting.</p>
-<p>Produced a Goal Setting Mini Guide in Arabic. Delivered 1:1 coaching to clients. Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development.</p>
-<p>Interviewed Eric Edmeades (on record). Content is still available on Instagram.</p>`,
+    body: `<p>Started building under my own name at 17. What began as an Instagram brand in 2019 evolved into a full coaching practice by 2021.</p>
+<p>Built the entire product stack independently: ebook, website, newsletter, AI assistant, and all copywriting. Delivered 1:1 coaching to clients. Produced a <strong>Goal Setting Mini Guide</strong> in both Arabic and English, written at 19.</p>
+<p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades (on record). Content is still available on Instagram.</p>
+<p>The guides represent something I've carried since childhood: the instinct to take what I know and make it usable for someone else. That same instinct now drives Sanad, my dissertation, and the direction I'm heading after university.</p>`,
     meta: [
-      ['Started', 'Age 17 (2021)'],
-      ['Products', 'Ebook, newsletter, AI assistant, mini guide'],
+      ['Started', 'Age 17 (2019)'],
+      ['Period', '2019–2025'],
+      ['Products', 'Ebook, newsletter, AI assistant, mini guides'],
       ['Speaking', 'iAcademyPD · 70 attendees'],
       ['Interview', 'Eric Edmeades (on record)'],
     ],
     links: [
-      { label: 'Mini Guide (AR)', url: 'assets/goal-setting-guide-ar.pdf' },
-      { label: 'Mini Guide (EN)', url: 'assets/goal-setting-guide.pdf' },
+      { label: 'Goal Setting Guide (AR)', url: 'assets/goal-setting-guide-ar.pdf' },
+      { label: 'Goal Setting Guide (EN)', url: 'assets/goal-setting-guide.pdf' },
+      { label: '@khalilalnajem', url: 'https://instagram.com/khalilalnajem' },
     ],
     photos: ['assets/iacademy-poster.jpg'],
   },
@@ -237,24 +247,10 @@ const projects = {
     links: [],
     photos: [],
   },
-  'khalil-2020': {
-    label: 'Content · Brand · Entrepreneurship',
-    title: 'Khalil Alnajem, 2020',
-    status: '2019 · Archived',
-    active: false,
-    body: `<p>Built an Instagram brand under my own name at 17. Created content, taught myself design and business from scratch. Interviewed Eric Edmeades (on record).</p>
-<p>Not a credential. Just proof that the drive was there before any institution recognised it.</p>`,
-    meta: [
-      ['Platform', 'Instagram'],
-      ['Started', 'Age 17 (2019)'],
-    ],
-    links: [{ label: '@khalilalnajem', url: 'https://instagram.com/khalilalnajem' }],
-    photos: [],
-  },
   'aviation-globe': {
     label: 'Aviation · Content · Social Media',
     title: 'Aviation Globe',
-    status: '2018–2020 · Archived',
+    status: 'Archived · 2018–2020',
     active: false,
     body: `<p>An aviation passion project on Instagram sharing knowledge, news, and content about the aviation industry. Built an engaged audience around a genuine personal interest in flight and aerospace.</p>
 <p>The account is still live as an archive.</p>`,
@@ -268,7 +264,7 @@ const projects = {
   'dropshipping': {
     label: 'E-commerce · Early Venture',
     title: 'Dropshipping Venture',
-    status: '2020 · Closed',
+    status: 'Archived · 2020',
     active: false,
     body: `<p>Early e-commerce attempt during COVID. Earned my first revenue online but learned quickly that getting paid once is not the same as building something that lasts.</p>
 <p>No real operating system behind it. The failure taught me more about business structure than any class did.</p>`,
@@ -281,6 +277,9 @@ const projects = {
     photos: [],
   },
 };
+
+// Project order for prev/next navigation
+const projectOrder = ['sanad','rowad','tasheel','khalil-flow','mcp-server','homelab','ai-workflow','ai-creative','coaching','csu-stage','aviation-globe','dropshipping'];
 
 // Load project
 const id = new URLSearchParams(window.location.search).get('id');
@@ -316,9 +315,29 @@ if (p) {
     });
     document.getElementById('proj-photos').innerHTML = photosHtml;
   }
+
+  // Prev/Next navigation
+  const idx = projectOrder.indexOf(id);
+  const prevEl = document.getElementById('proj-prev');
+  const nextEl = document.getElementById('proj-next');
+  if (idx > 0) {
+    const prevId = projectOrder[idx - 1];
+    prevEl.href = `project.html?id=${prevId}`;
+    prevEl.textContent = `← ${projects[prevId].title}`;
+  } else {
+    prevEl.style.visibility = 'hidden';
+  }
+  if (idx < projectOrder.length - 1) {
+    const nextId = projectOrder[idx + 1];
+    nextEl.href = `project.html?id=${nextId}`;
+    nextEl.textContent = `${projects[nextId].title} →`;
+  } else {
+    nextEl.style.visibility = 'hidden';
+  }
 } else {
   document.getElementById('proj-title').textContent = 'Project not found';
   document.getElementById('proj-body').innerHTML = '<p>This project does not exist. <a href="projects.html">Back to projects</a>.</p>';
+  document.querySelector('.proj-nav-arrows').style.display = 'none';
 }
 
 // Nav highlight
