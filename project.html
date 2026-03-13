@@ -230,6 +230,7 @@ const projects = {
     links: [
       { label: 'Goal Setting Guide (AR)', url: 'assets/goal-setting-guide-ar.pdf' },
       { label: 'Goal Setting Guide (EN)', url: 'assets/goal-setting-guide.pdf' },
+      { label: 'Newsletter Sample', url: 'assets/k-newsletter.pdf' },
       { label: '@khalilalnajem', url: 'https://instagram.com/khalilalnajem' },
     ],
     photos: ['assets/iacademy-poster.jpg'],
@@ -356,6 +357,16 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Page transition
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href]');
+  if (!a || a.target === '_blank' || a.href.startsWith('mailto:') || a.href.includes('#')) return;
+  if (new URL(a.href).origin !== location.origin) return;
+  e.preventDefault();
+  document.body.classList.add('page-exit');
+  setTimeout(() => { window.location = a.href; }, 250);
+});
 </script>
 </body>
 </html>
