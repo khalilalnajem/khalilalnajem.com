@@ -745,6 +745,21 @@ a.project-card:hover .project-view-link {
   background: white;
   padding-left: 1.5rem;
 }
+.proj-list-item::after {
+  content: '→';
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.proj-list-item:hover::after {
+  opacity: 1;
+  color: var(--amber);
+  transform: translateX(3px);
+}
 
 .proj-list-name {
   font-family: var(--font-display);
@@ -881,6 +896,10 @@ a.project-card:hover .project-view-link {
 }
 .proj-detail-photo:hover {
   transform: scale(1.02);
+}
+.proj-detail-photo--square {
+  width: 320px;
+  height: 320px;
 }
 
 /* ── PROJECT BACK BUTTON (TOP) ── */
@@ -1528,10 +1547,21 @@ body[data-lang="ar"] .dis-abstract-ar { display: block; }
 .cv-item .cv-expand-icon {
   float: right;
   font-family: var(--font-mono);
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.3);
-  transition: transform 0.3s ease;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  transition: transform 0.3s ease, background 0.2s;
   line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+.cv-item:hover .cv-expand-icon {
+  background: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.8);
 }
 .cv-item.expanded .cv-expand-icon {
   transform: rotate(45deg);

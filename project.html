@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="web-icon.png">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -88,7 +89,9 @@ const projects = {
     active: true,
     body: `<p>Sanad is an Arabic-language AI education platform on X (<a href="https://x.com/ask_sanad" target="_blank">@ask_sanad</a>). It targets Gulf Arab youth who feel stuck, using AI for genuine self-understanding rather than productivity alone.</p>
 <p>Written in Kuwaiti Arabic dialect. The goal is to meet people where they are, in a voice they trust, not in translated corporate English.</p>
-<p>This is not a content page. It's a long-term platform for teaching people how to think with AI, not just use it.</p>`,
+<p>This is not a content page. It's a long-term platform for teaching people how to think with AI, not just use it.</p>
+<p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin:2rem 0 1rem">From the feed</p>
+<blockquote class="twitter-tweet"><p lang="ar" dir="rtl">مؤخراً وقّعت OpenAI اتفاق مع وزارة الدفاع الأمريكية (Department of Defense).<br>هذا يذكرني بأهمية أن يكون عندنا خيارات تعتمد على نماذج تعمل محلياً على أجهزتنا، خاصة في أوقات نحتاج فيها اطمئنان أكثر على بياناتنا.</p>&mdash; Sanad (@ask_sanad) <a href="https://twitter.com/ask_sanad/status/2029218273196224821?ref_src=twsrc%5Etfw">March 4, 2026</a></blockquote>`,
     meta: [
       ['Platform', 'X (Twitter)'],
       ['Audience', 'Gulf Arab youth'],
@@ -117,6 +120,7 @@ const projects = {
     ],
     links: [],
     photos: ['assets/rowad-warba.jpg'],
+    photoSquare: true,
   },
   'tasheel': {
     label: 'AI · Kuwait · Public Service',
@@ -141,7 +145,7 @@ const projects = {
     active: true,
     body: `<p>A personal wellbeing and routine app for iOS. Started as a recovery and strain tracker inspired by WHOOP, pulling data from a Polar fitness device. Has since evolved into something broader: morning routines, health and recovery data, reminders, and daily structure.</p>
 <p>Now connected to my personal MCP server, so my AI assistant has context on my readiness, schedule, and habits. Less a fitness app and more a personal operating system for how I start and manage each day.</p>
-<p>Designed the interface, defined the scoring logic, and shipped a working product, primarily to solve a problem commercial trackers wouldn't: giving me the raw numbers without locking them behind a subscription.</p>`,
+<p>Designed the interface, defined the scoring logic, and shipped a working product - primarily to solve a problem commercial trackers wouldn't: giving me the raw numbers without locking them behind a subscription.</p>`,
     meta: [
       ['Platform', 'iOS (Swift)'],
       ['Hardware', 'Polar fitness device'],
@@ -151,64 +155,22 @@ const projects = {
     links: [],
     photos: [],
   },
-  'mcp-server': {
-    label: 'AI · Automation · Tools',
-    title: 'Personal MCP Server',
+  'ai-infra': {
+    label: 'AI · Homelab · Automation · Tools',
+    title: 'Personal AI Infrastructure',
     status: 'Active',
     active: true,
-    body: `<p>A custom Model Context Protocol server running as a personal AI agent. It connects local tools and data sources into a unified agentic workflow, built on my homelab stack.</p>
-<p>MCP lets AI assistants like Claude access external tools and data in a structured way. My server connects my personal data, calendars, project files, and local services into one system that an AI can reason over.</p>`,
-    meta: [
-      ['Protocol', 'Model Context Protocol (MCP)'],
-      ['Runs on', 'Homelab (RPi5 + RTX 3090)'],
-      ['Started', '2024'],
-    ],
-    links: [],
-    photos: [],
-  },
-  'homelab': {
-    label: 'Infrastructure · Homelab · AI',
-    title: 'Self-Hosted AI Stack',
-    status: 'Active',
-    active: true,
-    body: `<p>A Raspberry Pi 5 homelab running Pi-hole, Unbound, Tailscale, and Open WebUI for local LLMs. An RTX 3090 workstation handles local inference and fine-tuning experiments.</p>
-<p>I tinker with tiny models for edge deployment, run custom MCP servers connecting personal data sources into agentic workflows, and use it as a low-cost research lab for testing AI behaviour and prompting strategies relevant to my dissertation.</p>
-<p>Built and maintained entirely solo.</p>`,
+    body: `<p>The system behind everything I build. Custom MCP servers, a self-hosted AI homelab (Raspberry Pi 5, RTX 3090, Docker, Ollama, Open WebUI), local LLM workflows, and AI-assisted creative tools for music, image, and video generation.</p>
+<p>A Raspberry Pi 5 runs Pi-hole, Unbound, Tailscale, and Open WebUI for local LLMs. An RTX 3090 workstation handles local inference and fine-tuning experiments. I tinker with tiny models for edge deployment, run custom MCP servers connecting personal data sources into agentic workflows, and use it as a low-cost research lab for testing AI behaviour and prompting strategies relevant to my dissertation.</p>
+<p>MCP lets AI assistants like Claude access external tools and data in a structured way. My server connects my personal data, calendars, project files, and local services into one system that an AI can reason over.</p>
+<p>On the creative side: this website was built entirely with Claude Code, I generate music with Suno, create images with Stable Diffusion and Midjourney, and produce video with Google Veo. AI is not a tool I use occasionally. It is how I build everything.</p>
+<p>Also includes a set of personal productivity tools: a dashboard tracking project progress, a session logger capturing inputs and outputs across different AI tools, and integrations connecting my university course system and calendar directly into AI assistants.</p>`,
     meta: [
       ['Hardware', 'Raspberry Pi 5 + RTX 3090'],
-      ['Services', 'Pi-hole, Unbound, Tailscale, Open WebUI, Ollama'],
-      ['Purpose', 'Local AI inference, fine-tuning, research'],
-    ],
-    links: [],
-    photos: [],
-  },
-  'ai-workflow': {
-    label: 'AI · Productivity · Research',
-    title: 'AI Workflow & Research Tools',
-    status: 'Active',
-    active: true,
-    body: `<p>A set of personal productivity tools for AI-assisted work: a dashboard tracking project progress, a session logger capturing inputs and outputs across different AI tools, and integrations connecting my university course system and calendar directly into AI assistants.</p>
-<p>Built to work faster and more accurately, driven by practical need, not engineering interest.</p>`,
-    meta: [
-      ['Type', 'Internal productivity tools'],
-      ['Integrations', 'University systems, calendar, AI tools'],
-      ['Started', '2024'],
-    ],
-    links: [],
-    photos: [],
-  },
-  'ai-creative': {
-    label: 'AI · Creative · Generative',
-    title: 'AI-Assisted Creative Work',
-    status: 'Active',
-    active: true,
-    body: `<p>Using AI tools across creative domains: building this website with Claude Code, generating music with Suno and other AI composition tools, creating images with Stable Diffusion and Midjourney, and producing video with Google Veo and AI video generation tools.</p>
-<p>AI is not a tool I use occasionally. It is how I build everything. This site you're reading was built entirely with Claude Code in a conversational workflow.</p>`,
-    meta: [
-      ['Website', 'Claude Code'],
-      ['Images', 'Stable Diffusion, Midjourney'],
-      ['Music', 'Suno, AI music generation'],
-      ['Video', 'Google Veo, AI video generation'],
+      ['Services', 'Pi-hole, Unbound, Tailscale, Open WebUI, Ollama, Docker'],
+      ['AI Tools', 'Claude Code, Stable Diffusion, Midjourney, Suno, Google Veo'],
+      ['Protocol', 'Model Context Protocol (MCP)'],
+      ['Purpose', 'Local AI inference, creative work, research, automation'],
     ],
     links: [{ label: 'khalilalnajem.com', url: 'https://khalilalnajem.com' }],
     photos: [],
@@ -220,13 +182,32 @@ const projects = {
     active: false,
     body: `<p>Started building under my own name at 16. What began as an Instagram brand in 2019 evolved into a full coaching practice by 2021.</p>
 <p>Built the entire product stack independently: ebook, website, newsletter, AI assistant, and all copywriting. Delivered 1:1 coaching to clients. Produced a <strong>Goal Setting Mini Guide</strong> in both Arabic and English, written at 19.</p>
-<p>Ran a recurring email newsletter covering personal development, goal-setting, and mindset. Each issue was written, designed, and sent independently.</p>
-<div style="border:1px solid var(--rule);padding:1.5rem;margin:1.5rem 0;background:var(--cream);border-radius:2px">
-<p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem">Newsletter Sample</p>
-<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem">Original newsletter issue covering personal growth and self-development. Written and designed independently in Arabic and English.</p>
-<a href="assets/newsletter-sample.html" target="_blank" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none">View Newsletter Sample →</a>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0">
+<div style="border:1px solid var(--rule);padding:1.25rem;background:var(--cream);border-radius:2px">
+<p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem">Goal Setting Mini Guide (Arabic)</p>
+<p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem">A structured guide to help Arabic-speaking students define and pursue personal goals.</p>
+<a href="assets/goal-setting-guide-ar.pdf" target="_blank" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none">View PDF →</a>
 </div>
-<p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades (on record). Content is still available on Instagram.</p>
+<div style="border:1px solid var(--rule);padding:1.25rem;background:var(--cream);border-radius:2px">
+<p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem">Goal Setting Mini Guide (English)</p>
+<p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem">English version of the same guide.</p>
+<a href="assets/goal-setting-guide.pdf" target="_blank" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none">View PDF →</a>
+</div>
+</div>
+<p>Ran a recurring email newsletter covering personal development, goal-setting, and mindset. Each issue was written, designed, and sent independently.</p>
+<div style="border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:1.5rem 0;max-width:480px">
+<div style="background:#333;padding:0.5rem 1rem;display:flex;align-items:center;gap:0.5rem">
+<span style="width:8px;height:8px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+<span style="width:8px;height:8px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+<span style="width:8px;height:8px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+<span style="font-family:var(--font-mono);font-size:0.6rem;color:#999;margin-left:0.5rem">newsletter-sample.html</span>
+</div>
+<iframe src="assets/newsletter-sample.html" style="width:100%;height:400px;border:none;background:#F0EDE8" loading="lazy"></iframe>
+<div style="padding:0.75rem 1rem;background:var(--cream);border-top:1px solid var(--rule)">
+<a href="assets/newsletter-sample.html" target="_blank" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);text-decoration:none">View Full Newsletter →</a>
+</div>
+</div>
+<p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades (on record) - international speaker and founder of WildFit and Business Freedom. Content is still available on Instagram.</p>
 <p>The guides represent something I've carried since childhood: the instinct to take what I know and make it usable for someone else. That same instinct now drives Sanad, my dissertation, and the direction I'm heading after university.</p>`,
     meta: [
       ['Started', 'Age 16 (2019)'],
@@ -277,7 +258,7 @@ const projects = {
 };
 
 // Project order for prev/next navigation
-const projectOrder = ['sanad','rowad','tasheel','khalil-flow','mcp-server','homelab','ai-workflow','ai-creative','coaching','csu-stage','aviation-globe'];
+const projectOrder = ['sanad','rowad','tasheel','khalil-flow','ai-infra','coaching','csu-stage','aviation-globe'];
 
 // Load project
 const id = new URLSearchParams(window.location.search).get('id');
@@ -309,10 +290,15 @@ if (p) {
   if (p.photos.length) {
     let photosHtml = '';
     p.photos.forEach(src => {
-      photosHtml += `<img src="${src}" alt="" class="proj-detail-photo" onclick="openLightbox('${src}')">`;
+      const squareClass = p.photoSquare ? ' proj-detail-photo--square' : '';
+      photosHtml += `<img src="${src}" alt="" class="proj-detail-photo${squareClass}" onclick="openLightbox('${src}')">`;
     });
     document.getElementById('proj-photos').innerHTML = photosHtml;
   }
+
+  // Load Twitter embeds if present
+  if (typeof twttr !== 'undefined') twttr.widgets.load();
+  else setTimeout(() => { if (typeof twttr !== 'undefined') twttr.widgets.load(); }, 1000);
 
   // Prev/Next navigation
   const idx = projectOrder.indexOf(id);
@@ -363,6 +349,9 @@ document.addEventListener('click', e => {
   e.preventDefault();
   document.body.classList.add('page-exit');
   setTimeout(() => { window.location = a.href; }, 250);
+});
+window.addEventListener('pageshow', function(event) {
+  document.body.classList.remove('page-exit');
 });
 </script>
 </body>

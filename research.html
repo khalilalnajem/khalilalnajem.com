@@ -193,6 +193,9 @@
       document.body.classList.add('page-exit');
       setTimeout(() => { window.location = a.href; }, 250);
     });
+    window.addEventListener('pageshow', function(event) {
+      document.body.classList.remove('page-exit');
+    });
   </script>
 </body>
 </html>

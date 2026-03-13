@@ -66,7 +66,7 @@
           <span class="proj-list-status"><span class="status-dot"></span> Concept</span>
         </a></li>
         <li><a href="project.html?id=khalil-flow" class="proj-list-item">
-          <div><h4 class="proj-list-name">Khalil Flow</h4><span class="proj-list-tag">iOS · Wellbeing · Personal</span><p style="font-size:0.8rem;color:var(--muted);line-height:1.5;margin-top:0.3rem;max-width:480px">Personal iOS app for wellbeing, routines, and recovery data, connected to my MCP server as a personal operating system for each day.</p></div>
+          <div><h4 class="proj-list-name">Khalil Flow</h4><span class="proj-list-tag">iOS · Wellbeing · Personal</span><p style="font-size:0.8rem;color:var(--muted);line-height:1.5;margin-top:0.3rem;max-width:480px">Personal iOS app for wellbeing, routines, and recovery data - connected to my MCP server as a personal operating system for each day.</p></div>
           <span class="proj-list-status"><span class="status-dot active"></span> Active</span>
         </a></li>
       </ul>
@@ -74,20 +74,8 @@
       <!-- INFRASTRUCTURE & TOOLS -->
       <p class="proj-group-label reveal">Infrastructure &amp; Tools</p>
       <ul class="proj-list reveal">
-        <li><a href="project.html?id=mcp-server" class="proj-list-item">
-          <div><h4 class="proj-list-name">Personal MCP Server</h4><span class="proj-list-tag">AI · Automation · Tools</span></div>
-          <span class="proj-list-status"><span class="status-dot active"></span> Active</span>
-        </a></li>
-        <li><a href="project.html?id=homelab" class="proj-list-item">
-          <div><h4 class="proj-list-name">Self-Hosted AI Stack</h4><span class="proj-list-tag">Infrastructure · Homelab · AI</span></div>
-          <span class="proj-list-status"><span class="status-dot active"></span> Active</span>
-        </a></li>
-        <li><a href="project.html?id=ai-workflow" class="proj-list-item">
-          <div><h4 class="proj-list-name">AI Workflow &amp; Research Tools</h4><span class="proj-list-tag">AI · Productivity · Research</span></div>
-          <span class="proj-list-status"><span class="status-dot active"></span> Active</span>
-        </a></li>
-        <li><a href="project.html?id=ai-creative" class="proj-list-item">
-          <div><h4 class="proj-list-name">AI-Assisted Creative Work</h4><span class="proj-list-tag">AI · Creative · Generative</span></div>
+        <li><a href="project.html?id=ai-infra" class="proj-list-item">
+          <div><h4 class="proj-list-name">Personal AI Infrastructure</h4><span class="proj-list-tag">AI · Homelab · Automation · Tools</span><p style="font-size:0.8rem;color:var(--muted);line-height:1.5;margin-top:0.3rem;max-width:480px">The system behind everything I build. Custom MCP servers, a self-hosted AI homelab (Raspberry Pi 5, RTX 3090, Docker, Ollama, Open WebUI), local LLM workflows, and AI-assisted creative tools for music, image, and video generation.</p></div>
           <span class="proj-list-status"><span class="status-dot active"></span> Active</span>
         </a></li>
       </ul>
@@ -154,6 +142,9 @@
       e.preventDefault();
       document.body.classList.add('page-exit');
       setTimeout(() => { window.location = a.href; }, 250);
+    });
+    window.addEventListener('pageshow', function(event) {
+      document.body.classList.remove('page-exit');
     });
   </script>
 </body>
