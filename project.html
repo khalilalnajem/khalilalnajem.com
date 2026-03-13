@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project — Khalil Alnajem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="web-icon.png">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="web-icon.png" alt="Khalil Alnajem"></a>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('hamburger').classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+    </ul>
+  </nav>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- PROJECT DETAIL -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-hero-label" id="proj-label"></span>
+      <h1 class="page-hero-title" id="proj-title"></h1>
+    </div>
+  </div>
+
+  <section class="proj-detail">
+    <div class="container">
+      <div class="proj-detail-grid">
+        <div class="proj-detail-body" id="proj-body"></div>
+        <div class="proj-detail-sidebar">
+          <div id="proj-meta"></div>
+          <div id="proj-links"></div>
+        </div>
+      </div>
+      <div class="proj-detail-photos" id="proj-photos"></div>
+    </div>
+  </section>
+
+  <section style="padding:2rem 0 5rem;">
+    <div class="container">
+      <a href="projects.html" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); text-decoration:none;">← Back to Projects</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p class="footer-name">Khalil Alnajem</p>
+      <p class="footer-name-ar">خليل الناجم</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:khalilalnajem+web@gmail.com">Email</a></li>
+      <li><a href="https://x.com/ask_sanad" target="_blank">X / Sanad</a></li>
+      <li><a href="https://linkedin.com/in/khalilalnajem" target="_blank">LinkedIn</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 khalilalnajem.com</p>
+  </footer>
+
+<script>
+const projects = {
+  'sanad': {
+    label: 'AI · Education · Arabic',
+    title: 'Sanad, سند',
+    status: 'Work in Progress',
+    active: true,
+    body: `<p>Sanad is an Arabic-language AI education platform on X (<a href="https://x.com/ask_sanad" target="_blank">@ask_sanad</a>). It targets Gulf Arab youth who feel stuck — using AI for genuine self-understanding rather than productivity alone.</p>
+<p>Written in Kuwaiti Arabic dialect. The goal is to meet people where they are, in a voice they trust, not in translated corporate English.</p>
+<p>This is not a content page. It's a long-term platform for teaching people how to think with AI — not just use it.</p>`,
+    meta: [
+      ['Platform', 'X (Twitter)'],
+      ['Audience', 'Gulf Arab youth'],
+      ['Language', 'Kuwaiti Arabic'],
+      ['Started', '2024'],
+    ],
+    links: [{ label: '@ask_sanad', url: 'https://x.com/ask_sanad' }],
+    photos: [],
+  },
+  'rowad': {
+    label: 'LLM · Fintech · Competition',
+    title: 'ROWAD Chatbot',
+    status: 'Completed · 2024',
+    active: false,
+    body: `<p>LLM-powered customer service chatbot built for Warba Bank's ROWAD 5.0 national innovation competition.</p>
+<p>The original 4-person team fell apart under pressure. My teammate and I rebuilt as a duo over six weeks — building an emotion-aware chatbot with personalised investment insights, designing the full UI across 10+ screens, and pitching to Warba Bank's board.</p>
+<p>We placed runner-up from the national field. Prize: KD 1,200 (approx. £4,000).</p>
+<p>The feedback was blunt: we were too technical. These were banking executives, not AI engineers. We built something strong, but didn't explain it in a way that landed. That taught me something I'd been avoiding — complexity does not equal value. If you can't communicate clearly to the people who matter, you don't have a product, you have a project.</p>`,
+    meta: [
+      ['Client', 'Warba Bank'],
+      ['Programme', 'ROWAD 5.0'],
+      ['Location', 'DIFC, Manchester'],
+      ['Team', '2 people (rebuilt from 4)'],
+      ['Result', 'Runner-up · KD 1,200'],
+      ['Year', '2024'],
+    ],
+    links: [],
+    photos: ['assets/rowad-warba.jpg'],
+  },
+  'tasheel': {
+    label: 'AI · Kuwait · Public Service',
+    title: 'Tasheel, تسهيل',
+    status: 'Concept Stage',
+    active: false,
+    body: `<p>Tasheel is a concept-stage AI assistant designed for navigating Kuwait's government paperwork and bureaucratic processes.</p>
+<p>Anyone who's dealt with Kuwaiti government offices knows the pain: unclear requirements, inconsistent information, and processes that change without warning. Tasheel is designed to reduce that friction for residents dealing with complex administrative workflows.</p>
+<p>Still in concept — researching feasibility and scope.</p>`,
+    meta: [
+      ['Focus', 'Government bureaucracy'],
+      ['Country', 'Kuwait'],
+      ['Stage', 'Concept / Research'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'khalil-flow': {
+    label: 'iOS · Fitness · Personal',
+    title: 'Khalil Flow',
+    status: 'Active',
+    active: true,
+    body: `<p>A personal recovery and strain tracking app for iOS, inspired by WHOOP. It pulls data from a Polar fitness device and calculates daily readiness and load scores.</p>
+<p>I designed the interface, defined the scoring logic, and shipped a working product — primarily to solve a problem I had with my own training data. Commercial fitness trackers either lock insights behind subscriptions or don't give you the raw numbers. This gives me exactly what I need.</p>`,
+    meta: [
+      ['Platform', 'iOS (Swift)'],
+      ['Hardware', 'Polar fitness device'],
+      ['Inspiration', 'WHOOP'],
+      ['Started', '2024'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'mcp-server': {
+    label: 'AI · Automation · Tools',
+    title: 'Personal MCP Server',
+    status: 'Active',
+    active: true,
+    body: `<p>A custom Model Context Protocol server running as a personal AI agent. It connects local tools and data sources into a unified agentic workflow, built on my homelab stack.</p>
+<p>MCP lets AI assistants like Claude access external tools and data in a structured way. My server connects my personal data, calendars, project files, and local services into one system that an AI can reason over.</p>`,
+    meta: [
+      ['Protocol', 'Model Context Protocol (MCP)'],
+      ['Runs on', 'Homelab (RPi5 + RTX 3090)'],
+      ['Started', '2024'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'homelab': {
+    label: 'Infrastructure · Homelab · AI',
+    title: 'Self-Hosted AI Stack',
+    status: 'Running',
+    active: true,
+    body: `<p>A Raspberry Pi 5 homelab running Pi-hole, Unbound, Tailscale, and Open WebUI for local LLMs. An RTX 3090 workstation handles local inference and fine-tuning experiments.</p>
+<p>I tinker with tiny models for edge deployment, run custom MCP servers connecting personal data sources into agentic workflows, and use it as a low-cost research lab for testing AI behaviour and prompting strategies relevant to my dissertation.</p>
+<p>Built and maintained entirely solo.</p>`,
+    meta: [
+      ['Hardware', 'Raspberry Pi 5 + RTX 3090'],
+      ['Services', 'Pi-hole, Unbound, Tailscale, Open WebUI, Ollama'],
+      ['Purpose', 'Local AI inference, fine-tuning, research'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'ai-workflow': {
+    label: 'AI · Productivity · Research',
+    title: 'AI Workflow & Research Tools',
+    status: 'Active',
+    active: true,
+    body: `<p>A set of personal productivity tools for AI-assisted work: a dashboard tracking project progress, a session logger capturing inputs and outputs across different AI tools, and integrations connecting my university course system and calendar directly into AI assistants.</p>
+<p>Built to work faster and more accurately — driven by practical need, not engineering interest.</p>`,
+    meta: [
+      ['Type', 'Internal productivity tools'],
+      ['Integrations', 'University systems, calendar, AI tools'],
+      ['Started', '2024'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'ai-creative': {
+    label: 'AI · Creative · Generative',
+    title: 'AI-Assisted Creative Work',
+    status: 'Ongoing',
+    active: true,
+    body: `<p>Using AI tools across creative domains: building this website with Claude Code, generating music with AI composition tools, creating images with Stable Diffusion and Midjourney, and experimenting with AI video generation.</p>
+<p>AI is not a tool I use occasionally — it is how I build everything. This site you're reading was built entirely with Claude Code in a conversational workflow.</p>`,
+    meta: [
+      ['Website', 'Claude Code'],
+      ['Images', 'Stable Diffusion, Midjourney'],
+      ['Music', 'AI composition tools'],
+      ['Video', 'AI video generation'],
+    ],
+    links: [{ label: 'khalilalnajem.com', url: 'https://khalilalnajem.com' }],
+    photos: [],
+  },
+  'coaching': {
+    label: 'Coaching · Personal Development · Brand',
+    title: 'Coaching Solopreneur',
+    status: '2021–2025',
+    active: false,
+    body: `<p>Launched a personal development coaching brand at 17. Built everything independently: ebook, website, newsletter, AI assistant, all copywriting.</p>
+<p>Produced a Goal Setting Mini Guide in Arabic. Delivered 1:1 coaching to clients. Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development.</p>
+<p>Interviewed Eric Edmeades (on record). Content is still available on Instagram.</p>`,
+    meta: [
+      ['Started', 'Age 17 (2021)'],
+      ['Products', 'Ebook, newsletter, AI assistant, mini guide'],
+      ['Speaking', 'iAcademyPD · 70 attendees'],
+      ['Interview', 'Eric Edmeades (on record)'],
+    ],
+    links: [
+      { label: 'Mini Guide (AR)', url: 'assets/goal-setting-guide-ar.pdf' },
+      { label: 'Mini Guide (EN)', url: 'assets/goal-setting-guide.pdf' },
+    ],
+    photos: ['assets/iacademy-poster.jpg'],
+  },
+  'csu-stage': {
+    label: 'Leadership · Events · Competition',
+    title: 'Stage Manager, CSU Case Competition',
+    status: 'Completed',
+    active: false,
+    body: `<p>Served as stage manager for a university case competition at Colorado State University. Responsible for coordinating logistics, managing the event flow, and ensuring a professional experience for participants and judges.</p>`,
+    meta: [
+      ['University', 'Colorado State University'],
+      ['Role', 'Stage Manager'],
+    ],
+    links: [],
+    photos: [],
+  },
+  'khalil-2020': {
+    label: 'Content · Brand · Entrepreneurship',
+    title: 'Khalil Alnajem, 2020',
+    status: '2019 · Archived',
+    active: false,
+    body: `<p>Built an Instagram brand under my own name at 17. Created content, taught myself design and business from scratch. Interviewed Eric Edmeades (on record).</p>
+<p>Not a credential. Just proof that the drive was there before any institution recognised it.</p>`,
+    meta: [
+      ['Platform', 'Instagram'],
+      ['Started', 'Age 17 (2019)'],
+    ],
+    links: [{ label: '@khalilalnajem', url: 'https://instagram.com/khalilalnajem' }],
+    photos: [],
+  },
+  'aviation-globe': {
+    label: 'Aviation · Content · Social Media',
+    title: 'Aviation Globe',
+    status: '2018–2020 · Archived',
+    active: false,
+    body: `<p>An aviation passion project on Instagram sharing knowledge, news, and content about the aviation industry. Built an engaged audience around a genuine personal interest in flight and aerospace.</p>
+<p>The account is still live as an archive.</p>`,
+    meta: [
+      ['Platform', 'Instagram'],
+      ['Period', '2018–2020'],
+    ],
+    links: [{ label: '@aviationglobe', url: 'https://instagram.com/aviationglobe' }],
+    photos: [],
+  },
+  'dropshipping': {
+    label: 'E-commerce · Early Venture',
+    title: 'Dropshipping Venture',
+    status: '2020 · Closed',
+    active: false,
+    body: `<p>Early e-commerce attempt during COVID. Earned my first revenue online but learned quickly that getting paid once is not the same as building something that lasts.</p>
+<p>No real operating system behind it. The failure taught me more about business structure than any class did.</p>`,
+    meta: [
+      ['Period', '2020'],
+      ['Outcome', 'First online revenue, then closed'],
+      ['Lesson', 'Getting paid once ≠ building something lasting'],
+    ],
+    links: [],
+    photos: [],
+  },
+};
+
+// Load project
+const id = new URLSearchParams(window.location.search).get('id');
+const p = projects[id];
+
+if (p) {
+  document.title = p.title + ' — Khalil Alnajem';
+  document.getElementById('proj-label').textContent = p.label;
+  document.getElementById('proj-title').textContent = p.title;
+  document.getElementById('proj-body').innerHTML = p.body;
+
+  // Meta sidebar
+  let metaHtml = `<div class="proj-detail-status"><span class="status-dot ${p.active ? 'active' : ''}"></span> ${p.status}</div>`;
+  p.meta.forEach(([k, v]) => {
+    metaHtml += `<div class="proj-detail-meta-item"><label>${k}</label><span>${v}</span></div>`;
+  });
+  document.getElementById('proj-meta').innerHTML = metaHtml;
+
+  // Links
+  if (p.links.length) {
+    let linksHtml = '';
+    p.links.forEach(l => {
+      linksHtml += `<a href="${l.url}" target="_blank" class="proj-detail-link">${l.label} →</a>`;
+    });
+    document.getElementById('proj-links').innerHTML = linksHtml;
+  }
+
+  // Photos
+  if (p.photos.length) {
+    let photosHtml = '';
+    p.photos.forEach(src => {
+      photosHtml += `<img src="${src}" alt="" class="proj-detail-photo" onclick="openLightbox('${src}')">`;
+    });
+    document.getElementById('proj-photos').innerHTML = photosHtml;
+  }
+} else {
+  document.getElementById('proj-title').textContent = 'Project not found';
+  document.getElementById('proj-body').innerHTML = '<p>This project does not exist. <a href="projects.html">Back to projects</a>.</p>';
+}
+
+// Nav highlight
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a[href]').forEach(a => {
+  if (a.getAttribute('href') === 'projects.html') a.style.color = 'var(--amber)';
+});
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
