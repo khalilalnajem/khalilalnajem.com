@@ -139,9 +139,9 @@ const projects = {
     title: 'Khalil Flow',
     status: 'Active',
     active: true,
-    body: `<p>A personal wellbeing and routine app for iOS. It started as a recovery and strain tracker inspired by WHOOP, pulling data from a Polar fitness device. It has since evolved into something broader: morning routines, health and recovery data, reminders, and daily structure.</p>
-<p>Now connected to my personal MCP server, so my AI assistant has context on my readiness, schedule, and habits. It is less a fitness app and more a personal operating system for how I start and manage each day.</p>
-<p>I designed the interface, defined the scoring logic, and shipped a working product, primarily to solve a problem commercial trackers wouldn't: giving me the raw numbers without locking them behind a subscription.</p>`,
+    body: `<p>A personal wellbeing and routine app for iOS. Started as a recovery and strain tracker inspired by WHOOP, pulling data from a Polar fitness device. Has since evolved into something broader: morning routines, health and recovery data, reminders, and daily structure.</p>
+<p>Now connected to my personal MCP server, so my AI assistant has context on my readiness, schedule, and habits. Less a fitness app and more a personal operating system for how I start and manage each day.</p>
+<p>Designed the interface, defined the scoring logic, and shipped a working product, primarily to solve a problem commercial trackers wouldn't: giving me the raw numbers without locking them behind a subscription.</p>`,
     meta: [
       ['Platform', 'iOS (Swift)'],
       ['Hardware', 'Polar fitness device'],
@@ -244,14 +244,18 @@ const projects = {
     photos: ['assets/iacademy-poster.jpg'],
   },
   'csu-stage': {
-    label: 'Leadership · Events · Competition',
-    title: 'Stage Manager, CSU Case Competition',
-    status: 'Completed',
+    label: 'Leadership · Events',
+    title: 'Stage Manager, CSU College of Business Case Competition',
+    status: 'Completed · 2021',
     active: false,
-    body: `<p>Served as stage manager for a university case competition at Colorado State University. Responsible for coordinating logistics, managing the event flow, and ensuring a professional experience for participants and judges.</p>`,
+    body: `<p>Selected by the Assistant Dean of the College of Business to manage logistics for the university's case study competition.</p>
+<p>Took ownership of the full event operation: venue and stage setup, technology, guest management, and ensuring the experience ran smoothly for participants, judges, and attendees.</p>
+<p>Part of a broader mentorship with the Assistant Dean, meeting weekly to develop leadership and event management skills.</p>`,
     meta: [
       ['University', 'Colorado State University'],
       ['Role', 'Stage Manager'],
+      ['Selected by', 'Assistant Dean, College of Business'],
+      ['Year', '2021'],
     ],
     links: [],
     photos: [],
@@ -270,26 +274,10 @@ const projects = {
     links: [{ label: '@aviationglobe', url: 'https://instagram.com/aviationglobe' }],
     photos: [],
   },
-  'dropshipping': {
-    label: 'E-commerce · Early Venture',
-    title: 'Device Skins Venture',
-    status: 'Archived · 2020',
-    active: false,
-    body: `<p>A dbrand-style business selling custom device skins and accessories online during COVID. Built the store, sourced products, and ran marketing independently.</p>
-<p>Earned my first revenue online but learned quickly that getting paid once is not the same as building something that lasts. No real operating system behind it. The failure taught me more about business structure than any class did.</p>`,
-    meta: [
-      ['Period', '2020'],
-      ['Type', 'Device skins & accessories (dbrand-style)'],
-      ['Outcome', 'First online revenue, then closed'],
-      ['Lesson', 'Getting paid once ≠ building something lasting'],
-    ],
-    links: [],
-    photos: [],
-  },
 };
 
 // Project order for prev/next navigation
-const projectOrder = ['sanad','rowad','tasheel','khalil-flow','mcp-server','homelab','ai-workflow','ai-creative','coaching','csu-stage','aviation-globe','dropshipping'];
+const projectOrder = ['sanad','rowad','tasheel','khalil-flow','mcp-server','homelab','ai-workflow','ai-creative','coaching','csu-stage','aviation-globe'];
 
 // Load project
 const id = new URLSearchParams(window.location.search).get('id');
