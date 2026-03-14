@@ -1022,6 +1022,13 @@ a.project-card:hover .project-view-link {
   text-align: center;
   flex: 0 0 auto;
 }
+.journey-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  opacity: 0.5;
+}
 .journey-dot {
   width: 10px;
   height: 10px;
@@ -1064,8 +1071,8 @@ a.project-card:hover .project-view-link {
 .influences-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
 }
 .influences-list li {
   display: flex;
@@ -1125,6 +1132,7 @@ a.project-card:hover .project-view-link {
     margin-left: 4.5px;
   }
   .journey-label { max-width: none; }
+  .influences-list { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── DISSERTATION ── */
