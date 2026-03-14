@@ -983,6 +983,150 @@ a.project-card:hover .project-view-link {
   .proj-nav-arrows { gap: 1rem; }
 }
 
+/* ── ABOUT PAGE EXTRA SECTIONS ── */
+.about-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.about-vision { padding: 4rem 0; }
+.vision-block {
+  border-left: 3px solid var(--amber);
+  padding-left: 2rem;
+  max-width: 700px;
+}
+.vision-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.about-journey {
+  padding: 3rem 0;
+  border-top: 1px solid var(--rule);
+}
+.journey-timeline {
+  display: flex;
+  align-items: flex-start;
+}
+.journey-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 auto;
+}
+.journey-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--muted);
+  margin-bottom: 0.75rem;
+}
+.journey-dot.active {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+.journey-place {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.journey-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  max-width: 140px;
+}
+.journey-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  margin-top: 5px;
+  min-width: 30px;
+}
+
+.about-influences {
+  padding: 3rem 0;
+  border-top: 1px solid var(--rule);
+}
+.influences-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.influences-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.influence-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.influence-note {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.about-tools {
+  padding: 3rem 0;
+  border-top: 1px solid var(--rule);
+}
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tool-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+  .journey-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .journey-stop {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 0.75rem;
+  }
+  .journey-dot { margin-bottom: 0; flex-shrink: 0; }
+  .journey-line {
+    width: 1px;
+    height: 20px;
+    min-width: 1px;
+    margin-top: 0;
+    margin-left: 4.5px;
+  }
+  .journey-label { max-width: none; }
+}
+
 /* ── DISSERTATION ── */
 #dissertation {
   background: var(--offwhite);
