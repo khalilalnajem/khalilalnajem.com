@@ -205,14 +205,14 @@ const projects = {
 </div>
 </div>
 </div>
-<p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades (on record) - international speaker and founder of WildFit and Business Freedom.</p>
+<p>Spoke to 70 people at the iAcademyPD on consciousness, leadership, and self-development. Interviewed Eric Edmeades - international speaker and founder of WildFit and Business Freedom.</p>
 <p>The guides represent something I've carried since childhood: the instinct to take what I know and make it usable for someone else. That same instinct now drives Sanad, my dissertation, and the direction I'm heading after university.</p>`,
     meta: [
       ['Started', '2019'],
       ['Period', '2021–2025'],
       ['Products', 'Ebook, newsletter, AI assistant, mini guides'],
       ['Speaking', 'iAcademyPD · 70 attendees'],
-      ['Interview', 'Eric Edmeades (on record)'],
+      ['Interview', 'Eric Edmeades'],
     ],
     links: [
       { label: '@khalilalnajem', url: 'https://instagram.com/khalilalnajem' },
@@ -283,12 +283,14 @@ if (p) {
 
   // Photos
   if (p.photos.length) {
+    const photosEl = document.getElementById('proj-photos');
+    if (p.photos.length > 1) photosEl.classList.add('proj-detail-photos--multi');
     let photosHtml = '';
     p.photos.forEach(src => {
       const squareClass = p.photoSquare ? ' proj-detail-photo--square' : '';
       photosHtml += `<img src="${src}" alt="" class="proj-detail-photo${squareClass}" onclick="openLightbox('${src}')">`;
     });
-    document.getElementById('proj-photos').innerHTML = photosHtml;
+    photosEl.innerHTML = photosHtml;
   }
 
   // Load Twitter embeds if present
