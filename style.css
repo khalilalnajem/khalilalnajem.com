@@ -800,15 +800,13 @@ a.project-card:hover .project-view-link {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  flex-shrink: 0;
-  white-space: nowrap;
-  text-align: right;
-  min-width: 120px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.4rem;
   flex-shrink: 0;
   white-space: nowrap;
+  min-width: 170px;
 }
 
 /* ── PROJECT DETAIL PAGE ── */
