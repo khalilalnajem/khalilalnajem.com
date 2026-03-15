@@ -842,6 +842,18 @@ a.project-card:hover .project-view-link {
   color: var(--navy);
 }
 
+.ig-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .ig-embed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .proj-detail-sidebar {
   display: flex;
   flex-direction: column;
