@@ -5,3 +5,10 @@ projects-preview.html
 619592324_*.jpg
 GGE_r_b*.jpeg
 GOAL-SETTING-MINI-GUIDE-FINAL*
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
