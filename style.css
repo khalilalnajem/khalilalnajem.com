@@ -848,6 +848,11 @@ a.project-card:hover .project-view-link {
   gap: 1rem;
   margin-top: 2rem;
 }
+.ig-embed-grid iframe {
+  width: 100%;
+  min-height: 480px;
+  border-radius: 4px;
+}
 @media (max-width: 900px) {
   .ig-embed-grid {
     grid-template-columns: 1fr;

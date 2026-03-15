@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="web-icon.png">
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
 </head>
 
 <body>
@@ -245,9 +244,9 @@ const projects = {
     body: `<p>An aviation passion project on Instagram sharing knowledge, news, and content about the aviation industry. Built an engaged audience around a genuine personal interest in flight and aerospace.</p>
 <p>The account is still live as an archive.</p>
 <div class="ig-embed-grid">
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BoHY2XeA0vT/" data-instgrm-version="14" style="max-width:340px;width:100%;"><a href="https://www.instagram.com/p/BoHY2XeA0vT/">View on Instagram</a></blockquote>
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BqhayYghP1G/" data-instgrm-version="14" style="max-width:340px;width:100%;"><a href="https://www.instagram.com/p/BqhayYghP1G/">View on Instagram</a></blockquote>
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B-w7J4VhZjC/" data-instgrm-version="14" style="max-width:340px;width:100%;"><a href="https://www.instagram.com/p/B-w7J4VhZjC/">View on Instagram</a></blockquote>
+<iframe src="https://www.instagram.com/p/BoHY2XeA0vT/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+<iframe src="https://www.instagram.com/p/BqhayYghP1G/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+<iframe src="https://www.instagram.com/p/B-w7J4VhZjC/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
 </div>`,
     meta: [
       ['Platform', 'Instagram'],
@@ -303,9 +302,6 @@ if (p) {
   if (typeof twttr !== 'undefined') twttr.widgets.load();
   else setTimeout(() => { if (typeof twttr !== 'undefined') twttr.widgets.load(); }, 1000);
 
-  // Load Instagram embeds if present
-  if (typeof instgrm !== 'undefined') instgrm.Embeds.process();
-  else setTimeout(() => { if (typeof instgrm !== 'undefined') instgrm.Embeds.process(); }, 1500);
 
   // Prev/Next navigation
   const idx = projectOrder.indexOf(id);
