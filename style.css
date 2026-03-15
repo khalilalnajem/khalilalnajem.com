@@ -848,14 +848,79 @@ a.project-card:hover .project-view-link {
   gap: 1rem;
   margin-top: 2rem;
 }
-.ig-embed-grid iframe {
+.ig-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+.ig-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.ig-card-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 10px;
+}
+.ig-card-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #dbdbdb;
+}
+.ig-card-user {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.ig-card-username {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #262626;
+}
+.ig-card-location {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.65rem;
+  color: #8e8e8e;
+}
+.ig-card-logo {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.ig-card-image img {
   width: 100%;
-  min-height: 480px;
-  border-radius: 4px;
+  display: block;
+}
+.ig-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+}
+.ig-card-icons {
+  display: flex;
+  gap: 14px;
+}
+.ig-card-footer {
+  padding: 0 14px 12px;
+}
+.ig-card-footer span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  color: #8e8e8e;
 }
 @media (max-width: 900px) {
   .ig-embed-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
   }
 }
 
