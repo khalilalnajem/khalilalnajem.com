@@ -83,6 +83,53 @@
     </div>
   </section>
 
+  <!-- WHAT I BUILD WITH AI -->
+  <section class="about-terminals">
+    <div class="container">
+      <p class="about-section-label reveal">What I Build With AI</p>
+      <p class="terminal-intro reveal">Real outputs from my infrastructure — self-hosted LLMs, Claude Code workflows, and custom MCP servers that connect my AI to my life.</p>
+      <div class="terminal-grid reveal" id="terminal-grid">
+
+        <div class="terminal-item" data-terminal="0">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body"></div>
+          </div>
+          <p class="terminal-label"><a href="project.html?id=ai-infra">&rarr; Personal AI Infrastructure</a></p>
+        </div>
+
+        <div class="terminal-item" data-terminal="1">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body"></div>
+          </div>
+          <p class="terminal-label"><a href="project.html?id=ai-infra">&rarr; This Website</a></p>
+        </div>
+
+        <div class="terminal-item" data-terminal="2">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body"></div>
+          </div>
+          <p class="terminal-label"><a href="project.html?id=khalil-flow">&rarr; MCP Server &amp; Khalil Flow</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- JOURNEY -->
   <section class="about-journey">
     <div class="container">
@@ -129,18 +176,36 @@
     </div>
   </section>
 
+  <!-- HOW I LEARN -->
+  <section class="about-vision">
+    <div class="container">
+      <p class="about-section-label reveal">How I Learn</p>
+      <div class="vision-block reveal">
+        <p class="vision-text">I don't separate inner work from outer building. Five years of Mindvalley, Jung, and consciousness work alongside homelab tinkering, iOS shipping, and LLM research. The inner work sharpens the building. The building tests the inner work. Everything I know, I taught myself or learned by making something real.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- TOOLS -->
   <section class="about-tools">
     <div class="container">
       <p class="about-section-label reveal">Tools</p>
       <div class="tools-row reveal">
         <span class="tool-pill">Claude</span>
+        <span class="tool-pill">Claude Code</span>
         <span class="tool-pill">NotebookLM</span>
         <span class="tool-pill">Obsidian</span>
         <span class="tool-pill">Ollama</span>
         <span class="tool-pill">Open WebUI</span>
         <span class="tool-pill">Docker</span>
         <span class="tool-pill">Figma</span>
+        <span class="tool-pill">Swift</span>
+        <span class="tool-pill">Stable Diffusion</span>
+        <span class="tool-pill">Midjourney</span>
+        <span class="tool-pill">Suno</span>
+        <span class="tool-pill">Google Veo</span>
+        <span class="tool-pill">Tailscale</span>
+        <span class="tool-pill">Pi-hole</span>
       </div>
     </div>
   </section>
@@ -165,6 +230,129 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     revealEls.forEach(el => obs.observe(el));
+
+    /* ── Terminal typing animation ── */
+    const terminalData = [
+      {
+        lines: [
+          { type: 'prompt', text: 'khalil@homelab:~$ ' },
+          { type: 'command', text: 'docker ps' },
+          { type: 'output', text: 'CONTAINER    STATUS' },
+          { type: 'output', text: 'ollama       Up 47 days' },
+          { type: 'output', text: 'open-webui   Up 47 days' },
+          { type: 'output', text: 'pi-hole      Up 47 days' },
+          { type: 'output', text: 'tailscale    Up 47 days' },
+          { type: 'output', text: 'unbound      Up 47 days' },
+          { type: 'output', text: '' },
+          { type: 'prompt', text: 'khalil@homelab:~$ ' },
+          { type: 'command', text: 'ollama list' },
+          { type: 'output', text: 'NAME          PARAMS   SIZE' },
+          { type: 'output', text: 'llama3.2      3B       2.0 GB' },
+          { type: 'output', text: 'mistral       7B       4.1 GB' },
+          { type: 'output', text: 'gemma2        9B       5.4 GB' },
+        ]
+      },
+      {
+        lines: [
+          { type: 'prompt', text: 'khalil@desktop:~$ ' },
+          { type: 'command', text: 'claude --model opus' },
+          { type: 'output', text: '> Build the about page for khalilalnajem.com' },
+          { type: 'output', text: '' },
+          { type: 'output', text: '  Creating sections...' },
+          { type: 'output', text: '  Writing CSS...' },
+          { type: 'output', text: '  \u2713 about.html updated' },
+          { type: 'output', text: '  \u2713 style.css updated' },
+          { type: 'output', text: '  \u2713 Committed and pushed' },
+          { type: 'output', text: '' },
+          { type: 'prompt', text: 'khalil@desktop:~$ ' },
+          { type: 'command', text: 'git log --oneline -3' },
+          { type: 'output', text: '0e6839b Full-width project photos with grid layout' },
+          { type: 'output', text: '198a36d Add Eric Edmeades interview photo' },
+          { type: 'output', text: 'ac24ab8 Repo cleanup: remove unused tracked files' },
+        ]
+      },
+      {
+        lines: [
+          { type: 'prompt', text: 'khalil@mcp-server:~$ ' },
+          { type: 'command', text: 'mcp serve --port 3000' },
+          { type: 'output', text: '  \u2713 Connected: Calendar' },
+          { type: 'output', text: '  \u2713 Connected: Khalil Flow' },
+          { type: 'output', text: '  \u2713 Connected: Project Files' },
+          { type: 'output', text: '  \u2713 Connected: University Courses' },
+          { type: 'output', text: '  Server ready on port 3000' },
+          { type: 'output', text: '' },
+          { type: 'output', text: '  Tool call: get_today_readiness()' },
+          { type: 'output', text: '  \u2192 Recovery: 82% | Strain: 6.4' },
+        ]
+      }
+    ];
+
+    function animateTerminal(terminalIndex, body) {
+      const data = terminalData[terminalIndex];
+      if (!data) return;
+      body.innerHTML = '';
+      let delay = 0;
+
+      data.lines.forEach(line => {
+        if (line.type === 'prompt') {
+          const el = document.createElement('span');
+          el.className = 'terminal-line';
+          const promptSpan = document.createElement('span');
+          promptSpan.className = 'terminal-prompt';
+          promptSpan.textContent = line.text;
+          el.appendChild(promptSpan);
+          body.appendChild(el);
+          setTimeout(() => el.classList.add('visible'), delay);
+          delay += 100;
+        } else if (line.type === 'command') {
+          // Find the last prompt line and append command typing to it
+          const lastLine = body.lastElementChild;
+          const cmdSpan = document.createElement('span');
+          cmdSpan.className = 'terminal-command';
+          lastLine.appendChild(cmdSpan);
+          const chars = line.text.split('');
+          chars.forEach((char, i) => {
+            setTimeout(() => {
+              cmdSpan.textContent += char;
+            }, delay + i * 40);
+          });
+          delay += chars.length * 40 + 200;
+          // Add newline after command
+          setTimeout(() => {
+            const br = document.createElement('br');
+            body.appendChild(br);
+          }, delay - 200);
+        } else {
+          const el = document.createElement('div');
+          el.className = 'terminal-line';
+          const outSpan = document.createElement('span');
+          outSpan.className = 'terminal-output';
+          outSpan.textContent = line.text || '\u00A0';
+          el.appendChild(outSpan);
+          body.appendChild(el);
+          setTimeout(() => el.classList.add('visible'), delay);
+          delay += 80;
+        }
+      });
+    }
+
+    const termGrid = document.getElementById('terminal-grid');
+    if (termGrid) {
+      let terminalAnimated = false;
+      const termObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !terminalAnimated) {
+            terminalAnimated = true;
+            document.querySelectorAll('.terminal-item').forEach((item, i) => {
+              const body = item.querySelector('.terminal-body');
+              const idx = parseInt(item.dataset.terminal);
+              setTimeout(() => animateTerminal(idx, body), i * 200);
+            });
+          }
+        });
+      }, { threshold: 0.15 });
+      termObs.observe(termGrid);
+    }
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a[href]').forEach(a => {
