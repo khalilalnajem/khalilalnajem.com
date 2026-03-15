@@ -1310,6 +1310,67 @@ a.project-card:hover .project-view-link {
   }
 }
 
+/* ── ASK TERMINAL ── */
+.ask-terminal-wrap {
+  padding: 2.5rem 0 4rem;
+}
+.ask-terminal-wrap code {
+  font-family: var(--font-mono);
+  color: #28c840;
+  background: rgba(0,0,0,0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+.ask-terminal {
+  max-width: 680px;
+}
+.ask-terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
+  margin-left: auto;
+}
+.ask-terminal .terminal-body {
+  max-height: 360px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.ask-terminal .terminal-body::-webkit-scrollbar { width: 4px; }
+.ask-terminal .terminal-body::-webkit-scrollbar-track { background: transparent; }
+.ask-terminal .terminal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.ask-terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: #16162a;
+  border-radius: 0 0 8px 8px;
+}
+.ask-terminal-input-row .terminal-prompt {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.ask-terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #28c840;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  caret-color: #28c840;
+}
+.ask-terminal-input::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+.ask-terminal .terminal-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 /* ── DISSERTATION ── */
 #dissertation {
   background: var(--offwhite);

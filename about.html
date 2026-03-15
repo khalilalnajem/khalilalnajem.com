@@ -130,6 +130,30 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE TERMINAL -->
+  <div class="ask-terminal-wrap">
+    <div class="container">
+      <p class="terminal-intro reveal" style="margin-top:0;">Now try it yourself. Type <code>help</code> to start.</p>
+      <div class="reveal">
+        <div class="terminal-window ask-terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="ask-terminal-title">visitor@khalilalnajem.com</span>
+          </div>
+          <div class="terminal-body" id="ask-terminal-body">
+            <div class="terminal-line visible"><span class="terminal-output">Welcome. Type <span style="color:#28c840">help</span> to see what you can ask.</span></div>
+          </div>
+          <div class="ask-terminal-input-row">
+            <span class="terminal-prompt">visitor@khalilalnajem.com:~$&nbsp;</span>
+            <input type="text" id="ask-terminal-input" class="ask-terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- JOURNEY -->
   <section class="about-journey">
     <div class="container">
@@ -352,6 +376,167 @@
         });
       }, { threshold: 0.15 });
       termObs.observe(termGrid);
+    }
+
+    /* ── Ask Terminal ── */
+    const askResponses = {
+      help: [
+        'Available commands:',
+        '',
+        '  <span style="color:#28c840">vision</span>      — What I\'m working toward',
+        '  <span style="color:#28c840">stack</span>       — My tech & tools',
+        '  <span style="color:#28c840">projects</span>    — What I\'ve built',
+        '  <span style="color:#28c840">research</span>    — My dissertation',
+        '  <span style="color:#28c840">books</span>       — What shaped my thinking',
+        '  <span style="color:#28c840">jung</span>        — Why Carl Jung matters to me',
+        '  <span style="color:#28c840">kuwait</span>      — Where I\'m from and going back to',
+        '  <span style="color:#28c840">ai</span>          — How I use AI',
+        '  <span style="color:#28c840">teach</span>       — Why teaching pulls at me',
+        '  <span style="color:#28c840">contact</span>     — Get in touch',
+        '  <span style="color:#28c840">clear</span>       — Clear terminal',
+      ],
+      vision: [
+        'MSc in Entrepreneurship → PhD → Professor.',
+        'Long-term: build research-grounded entrepreneurship',
+        'education in Kuwait, taught in Arabic, rooted in Gulf context.',
+        'Not imported frameworks. The real thing.',
+      ],
+      stack: [
+        'Daily drivers:',
+        '  Claude & Claude Code (this site was built with it)',
+        '  Ollama + Open WebUI (self-hosted LLMs)',
+        '  Docker on a Raspberry Pi 5 + RTX 3090 desktop',
+        '  Obsidian, Figma, Swift, Tailscale, Pi-hole',
+        '',
+        'Models I run locally:',
+        '  llama3.2 (3B) · mistral (7B) · gemma2 (9B)',
+      ],
+      projects: [
+        'Sanad — AI education platform for the Gulf (ROWAD 5.0 runner-up)',
+        'Khalil Flow — Personal iOS app for wellbeing & routines',
+        'Personal AI Infrastructure — Homelab, MCP servers, local LLMs',
+        'Aviation Globe — Aviation content page (archived)',
+        'This website — Built entirely with Claude Code',
+        '',
+        'See them all → <a href="projects.html" style="color:var(--amber)">projects.html</a>',
+      ],
+      research: [
+        'Dissertation: "Can LLMs Support Entrepreneurial Cognition?"',
+        'Systematic literature review using PRISMA methodology.',
+        '64 journal articles reviewed.',
+        'Asking whether AI can augment how founders think —',
+        'not automate it, but support it.',
+        '',
+        'Read more → <a href="research.html" style="color:var(--amber)">research.html</a>',
+      ],
+      books: [
+        'Books that shaped how I think:',
+        '',
+        '  "Tao Te Ching" — Lao Tzu',
+        '  "Man and His Symbols" — Carl Jung',
+        '  "Memories, Dreams, Reflections" — Carl Jung',
+        '  "The Power of Now" — Eckhart Tolle',
+        '  "Ask and It Is Given" — Abraham-Hicks',
+        '  "WildFit" — Eric Edmeades',
+      ],
+      jung: [
+        '"Until you make the unconscious conscious,',
+        ' it will direct your life and you will call it fate."',
+        '',
+        'Jung taught me that the inner work isn\'t separate',
+        'from the outer building. Shadow work, individuation,',
+        'understanding your own patterns — that\'s the',
+        'foundation everything else stands on.',
+      ],
+      kuwait: [
+        'Born and raised in Kuwait.',
+        'Left for Colorado at 18, then Glasgow.',
+        'Going back after the PhD.',
+        '',
+        'The Gulf needs entrepreneurship education that',
+        'isn\'t copy-pasted from Western textbooks.',
+        'I want to build that. In Arabic. For us.',
+      ],
+      ai: [
+        'I don\'t just use AI — I build with it and live in it.',
+        '',
+        '  → Self-hosted LLMs on my homelab',
+        '  → Claude Code builds my websites and tools',
+        '  → Custom MCP server connects AI to my calendar,',
+        '    health data, projects, and university courses',
+        '  → My dissertation researches AI for founders',
+        '',
+        'AI is infrastructure, not novelty.',
+      ],
+      teach: [
+        'As a child, I gathered my siblings to play school.',
+        'When my father asked what gift I wanted, I chose a whiteboard.',
+        '',
+        'At university, friends come to me because',
+        'they know I\'ll help them think, not just give answers.',
+        '',
+        'Teaching is the highest form of entrepreneurship:',
+        'you take what you know and make it usable for someone else.',
+      ],
+      contact: [
+        'Email: khalilalnajem+web@gmail.com',
+        'LinkedIn: <a href="https://linkedin.com/in/khalilalnajem" target="_blank" style="color:var(--amber)">linkedin.com/in/khalilalnajem</a>',
+        'X: <a href="https://x.com/ask_sanad" target="_blank" style="color:var(--amber)">@ask_sanad</a>',
+      ],
+    };
+
+    const askBody = document.getElementById('ask-terminal-body');
+    const askInput = document.getElementById('ask-terminal-input');
+
+    function addAskLine(html, cls) {
+      const div = document.createElement('div');
+      div.className = 'terminal-line visible';
+      div.innerHTML = '<span class="' + (cls || 'terminal-output') + '">' + html + '</span>';
+      askBody.appendChild(div);
+    }
+
+    function handleAskCommand(raw) {
+      const cmd = raw.trim().toLowerCase();
+      if (!cmd) return;
+
+      addAskLine('visitor@khalilalnajem.com:~$ <span class="terminal-command">' + raw.replace(/</g,'&lt;') + '</span>', 'terminal-prompt');
+
+      if (cmd === 'clear') {
+        askBody.innerHTML = '<div class="terminal-line visible"><span class="terminal-output">Terminal cleared. Type <span style="color:#28c840">help</span> for commands.</span></div>';
+        return;
+      }
+
+      let response = null;
+      for (const key in askResponses) {
+        if (cmd === key || cmd.includes(key)) {
+          response = askResponses[key];
+          break;
+        }
+      }
+
+      if (!response) {
+        addAskLine('Command not found: ' + raw.replace(/</g,'&lt;'));
+        addAskLine('Type <span style="color:#28c840">help</span> to see available commands.');
+        askBody.scrollTop = askBody.scrollHeight;
+        return;
+      }
+
+      response.forEach((line, i) => {
+        setTimeout(() => {
+          addAskLine(line || '&nbsp;');
+          askBody.scrollTop = askBody.scrollHeight;
+        }, i * 60);
+      });
+    }
+
+    if (askInput) {
+      askInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          handleAskCommand(askInput.value);
+          askInput.value = '';
+        }
+      });
+      document.querySelector('.ask-terminal').addEventListener('click', () => askInput.focus());
     }
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
